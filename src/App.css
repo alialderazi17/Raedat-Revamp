@@ -19,70 +19,113 @@ body {
 /* Background Image with Brand Purple Overlay */
 .subPage-banner::before {
   content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Gradient using a deep brand purple for an institutional feel */
-  background:
-    linear-gradient(rgba(75, 38, 128, 0.7), rgba(75, 38, 128, 0.5)),
-    url("./assets/mission-image.png");
-  background-size: cover;
+  .hero-image {
+    /* Layout */
+    height: 60vh; /* Adjust height for homepage impact */
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Clips the zoom animation */
+    color: white; /* Ensures text is readable */
+    text-align: center;
+  }
+
+  /* Animated Background Layer */
+  .hero-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient using a deep brand purple for an institutional feel */
+    background:
+      linear-gradient(rgba(75, 38, 128, 0.7), rgba(75, 38, 128, 0.5)),
+      url("./assets/mission-image.png");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Cinematic slow zoom animation */
+    animation: kenBurns 15s ease-in-out infinite alternate;
+  }
+
+  /* Headline Styling */
+  .subPage-banner h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding: 0 10%;
+    line-height: 1.2;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Slide in animation */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  /* Primary Orange Button */
+  .subPage-banner button {
+    background-color: #f7941d; /* Brand Orange */
+    color: #ffffff;
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; /* Professional radius as per "Consistent radius" note */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
+    /* Entrance animation with a slight delay */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  /* Button Hover State */
+  .subPage-banner button:hover {
+    background-color: #e6830d; /* Slightly darker orange */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(247, 148, 29, 0.5);
+  }
+
+  /* Animation Keyframes */
+  @keyframes kenBurns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.15);
+    }
+  }
+
+  /* Background Setup */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./assets/image.png");
   background-position: center;
+  background-size: cover;
+
+  /* Animation: Slow subtle zoom (Ken Burns effect) */
+  animation: zoomBackground 10s ease-in-out infinite alternate;
   z-index: -1;
-  /* Cinematic slow zoom animation */
-  animation: kenBurns 15s ease-in-out infinite alternate;
 }
 
-/* Headline Styling */
-.subPage-banner h1 {
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding: 0 10%;
-  line-height: 1.2;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  /* Slide in animation */
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
+/* Text Animation */
+.hero-image h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 
-/* Primary Orange Button */
-.subPage-banner button {
-  background-color: #f7941d; /* Brand Orange */
-  color: #ffffff;
-  padding: 16px 40px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 50px; /* Professional radius as per "Consistent radius" note */
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
-  /* Entrance animation with a slight delay */
+  /* Animation: Slide up and fade in */
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
-}
-
-/* Button Hover State */
-.subPage-banner button:hover {
-  background-color: #e6830d; /* Slightly darker orange */
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(247, 148, 29, 0.5);
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 /* Animation Keyframes */
-@keyframes kenBurns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.15);
-  }
-}
 
 @keyframes fadeInUp {
   to {

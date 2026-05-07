@@ -1,10 +1,16 @@
 import "./App.css"
-import Home from "./pages/home"
-
+import Nav from "./components/Nav"
+import Newsletter from "./pages/Newsletter"
+import { Route, Routes } from "react-router-dom"
 const App = () => {
   return (
     <>
-      <Home />
+      <div>
+        <Nav />
+        <Routes>
+          <Route path="/newsletter" element={<Newsletter />} />
+        </Routes>
+      </div>
     </>
   )
 }
