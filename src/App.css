@@ -42,21 +42,20 @@ nav {
   color: #f7941d; /* Hover Orange */
 }
 
-/* --- Banner --- */
 .subPage-banner {
-  margin-top: 100px; /* Offset for larger nav */
-  height: 80vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Stack headline and button on the left */
   justify-content: center;
+  align-items: flex-start; /* Align text and button to the left */
+  padding: 0 8%;
   position: relative;
   overflow: hidden;
-  text-align: center;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #ffffff;
+  box-sizing: border-box;
 }
 
+/* Background Image Layer */
 .subPage-banner::before {
   content: "";
   position: absolute;
@@ -70,37 +69,68 @@ nav {
   background-size: cover;
   background-position: center;
   z-index: -1;
-  animation: kenBurns 15s ease-in-out infinite alternate;
 }
 
+/* --- Left Side Group --- */
 .subPage-banner h1 {
-  /* Smaller font size as requested */
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  padding: 0 10%;
-  line-height: 1.2;
-  /* Purple or Orange Text - using Orange for maximum impact */
-  color: #ffffff;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  font-size: 50px;
+  color: #fefefd;
+  max-width: 500px;
+  text-align: left;
+  margin: 0 0 30px 0; /* Space specifically below the headline */
+  line-height: 1.1;
 }
 
 .subPage-banner button {
+  /* Removed absolute positioning to prevent overlap */
   background-color: #f7941d;
-  color: #ffffff;
-  padding: 16px 40px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border: none;
+  color: white;
+  padding: 20px 60px;
+  font-size: 1.5rem;
   border-radius: 50px;
+  border: none;
+  font-weight: 800;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  width: fit-content;
+}
+
+.subPage-banner button:hover {
+  transform: scale(1.05);
+}
+
+/* --- Right Side Group (Download + QR) --- */
+.qr-group {
+  position: absolute;
+  right: 8%;
+  /* CHANGED: moved from 50% to 60% to push it lower */
+  top: 60%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 5;
+}
+
+.qr-group h1 {
+  font-size: 50px;
+  color: #c41ac4;
+  max-width: 500px;
+  text-align: left;
+  margin: 0 0 30px 0; /* Space specifically below the headline */
+  line-height: 1.1;
+}
+
+.qr-group img {
+  width: 250px;
+  height: 350px;
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  border: 4px solid #f7941d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Mobile Sidebar Design --- */
@@ -117,6 +147,17 @@ nav {
 /* --- Mobile Nav (Sidebar + Menu Icon) --- */
 @media (max-width: 768px) {
   /* Show the hamburger '---' */
+  .subPage-banner {
+    flex-direction: column; /* Stacks vertically on small screens */
+    text-align: center;
+    justify-content: center;
+  }
+
+  .subPage-banner h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
   .menu-button {
     display: flex;
     flex-direction: column;
