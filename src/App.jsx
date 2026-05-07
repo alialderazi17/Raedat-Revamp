@@ -1,9 +1,9 @@
-import './App.css'
-
+import "./App.css"
+import Partnerspage from "./pages/partnersPage"
 const App = () => {
   return (
     <>
-      <h1>hello</h1>
+      <Partnerspage />
     </>
   )
 }
