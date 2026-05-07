@@ -2,22 +2,206 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
-.hero-image {
-  /* Layout */
-  height: 60vh; /* Adjust height for homepage impact */
-  min-height: 400px;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Increased to fit larger logo */
+  background-color: #4b2680; /* Brand Purple */
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  box-sizing: border-box;
+  border-bottom: 4px solid #f7941d; /* Brand Orange */
+  z-index: 1000;
+}
+
+.logo img {
+  height: 75px; /* Larger logo */
+  width: auto;
+}
+
+.navbar {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem; /* Larger navigation text */
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #f7941d; /* Hover Orange */
+}
+
+/* --- Banner --- */
+.subPage-banner {
+  margin-top: 100px; /* Offset for larger nav */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden; /* Clips the zoom animation */
-  color: white; /* Ensures text is readable */
+  overflow: hidden;
   text-align: center;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+.subPage-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(75, 38, 128, 0.7), rgba(75, 38, 128, 0.5)),
+    url("./assets/mission-image.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: kenBurns 15s ease-in-out infinite alternate;
+}
+
+.subPage-banner h1 {
+  /* Smaller font size as requested */
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding: 0 10%;
+  line-height: 1.2;
+  /* Purple or Orange Text - using Orange for maximum impact */
+  color: #ffffff;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.subPage-banner button {
+  background-color: #f7941d;
+  color: #ffffff;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+/* --- Mobile Sidebar Design --- */
+#menu-toggle,
+.menu-button {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+/* --- Mobile Nav (Sidebar + Menu Icon) --- */
+@media (max-width: 768px) {
+  /* Show the hamburger '---' */
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 35px;
+    height: 4px;
+    background-color: #f7941d; /* Brand Orange */
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* Transform navbar into a sidebar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden by default */
+    width: 280px;
+    height: 100vh;
+    background-color: #4b2680;
+    flex-direction: column;
+    padding: 120px 40px;
+    transition: 0.4s ease-in-out;
+    border-right: 4px solid #f7941d;
+  }
+
+  .navbar a {
+    font-size: 1.6rem; /* Bigger for mobile */
+    color: white;
+  }
+
+  /* When checkbox is clicked, slide menu in */
+  #menu-toggle:checked ~ .navbar {
+    left: 0;
+  }
+
+  /* Turn '---' into 'X' when open */
+  #menu-toggle:checked ~ .menu-button span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-button span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked ~ .menu-button span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
+/* --- Animations --- */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-image {
+  /* Layout */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #ffffff;
 }
 
 /* Animated Background Layer */
 .hero-image::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -27,13 +211,27 @@ body {
   /* Background Setup */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('./assets/image.png');
+    url("./assets/image.png");
   background-position: center;
   background-size: cover;
 
   /* Animation: Slow subtle zoom (Ken Burns effect) */
   animation: zoomBackground 10s ease-in-out infinite alternate;
   z-index: -1;
+}
+.hero-image button {
+  background-color: #f7941d;
+  color: #ffffff;
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
 /* Text Animation */
@@ -47,13 +245,4 @@ body {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-out forwards;
-}
-
-/* Animation Keyframes */
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
