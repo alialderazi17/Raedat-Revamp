@@ -1,0 +1,90 @@
+.footer-container {
+  background-color: #4b2680;
+  color: white;
+  padding: 25px 8%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 15px;
+}
+
+.footer-brand-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-mini-logo {
+  height: 35px;
+}
+
+.footer-divider {
+  opacity: 0.4;
+  font-size: 1.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.footer-action-side {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.get-app-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.mini-badge {
+  height: 35px;
+  cursor: pointer;
+}
+
+.mini-qr-box {
+  background: white;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mini-qr-box img {
+  width: 50px;
+  height: 50px;
+}
+
+.admin-link-tiny {
+  color: #f7941d;
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 18px;
+  transition: opacity 0.2s;
+}
+
+.admin-link-tiny:hover {
+  opacity: 0.8;
+}
+
+.footer-legal {
+  padding-top: 15px;
+  text-align: center;
+}
+
+.footer-legal p {
+  font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.5;
+}

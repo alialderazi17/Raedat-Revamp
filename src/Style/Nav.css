@@ -1,0 +1,193 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+
+  /* Initial state: Transparent */
+  background-color: transparent;
+  background: linear-gradient(
+    to bottom,
+    rgba(75, 38, 128, 0.4) 60%,
+    rgba(75, 38, 128, 0) 100%
+  );
+  /* border-bottom: 4px solid transparent; */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: all 0.4s ease; /* Smooth transition between states */
+}
+
+/* --- The Scrolled State --- */
+nav.scrolled {
+  background: rgba(75, 38, 128, 0.95);
+  border-bottom: 4px solid #f7941d;
+  backdrop-filter: blur(10px); /* Modern frosted glass effect */
+  height: 80px; /* Optional: Shrink height slightly when scrolling for a sleeker feel */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  height: 75px;
+  width: auto;
+  transition: height 0.4s ease;
+}
+
+/* Optional: Shrink logo slightly on scroll */
+nav.scrolled .logo img {
+  height: 60px;
+}
+
+.navbar {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+  /* Add text-shadow to ensure visibility on transparent background at the top */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav.scrolled .navbar a {
+  text-shadow: none; /* Remove shadow once background is solid */
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #f7941d; /* Hover Orange */
+}
+
+/* Mobile Sidebar logic */
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .menu-button span {
+    width: 30px;
+    height: 3px;
+    background: #f7941d;
+  }
+  .navbar {
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    width: 70%;
+    height: calc(100vh - 100px);
+    background: #4b2680;
+    flex-direction: column;
+    padding: 50px;
+    transition: 0.4s;
+  }
+  #menu-toggle:checked ~ .navbar {
+    left: 0;
+  }
+}
+
+/* --- Mobile Sidebar Design --- */
+#menu-toggle,
+.menu-button {
+  display: none;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+}
+
+/* --- Mobile Nav (Sidebar + Menu Icon) --- */
+@media (max-width: 768px) {
+  /* Show the hamburger '---' */
+  .subPage-banner {
+    flex-direction: column; /* Stacks vertically on small screens */
+    text-align: center;
+    justify-content: center;
+  }
+
+  .subPage-banner h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 35px;
+    height: 4px;
+    background-color: #f7941d; /* Brand Orange */
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  /* Transform navbar into a sidebar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden by default */
+    width: 280px;
+    height: 100vh;
+    background-color: #4b2680;
+    flex-direction: column;
+    padding: 120px 40px;
+    transition: 0.4s ease-in-out;
+    border-right: 4px solid #f7941d;
+  }
+
+  .navbar a {
+    font-size: 1.6rem; /* Bigger for mobile */
+    color: white;
+  }
+
+  /* When checkbox is clicked, slide menu in */
+  #menu-toggle:checked ~ .navbar {
+    left: 0;
+  }
+
+  /* Turn '---' into 'X' when open */
+  #menu-toggle:checked ~ .menu-button span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  #menu-toggle:checked ~ .menu-button span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked ~ .menu-button span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+}
+
+/* --- Animations --- */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
