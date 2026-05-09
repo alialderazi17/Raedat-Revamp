@@ -1,182 +1,171 @@
+import React from "react"
+import "../Style/About.css"
+
 const About = () => {
   return (
-    <>
-      <div>
-        {/* nav  */}
-        <img src="../../public/assets/nav1.jpg" alt="navphoto" />
+    <div className="about-page-container">
+      {/* Hero / Nav Section */}
+      <div className="about-hero-wrapper">
+        <img
+          src="/assets/nav1.jpg"
+          alt="About Header"
+          className="about-nav-image"
+        />
+      </div>
 
-        {/* hello  */}
-        <div className="about-hello-all">
-          <div className="hello">
-            <h1>
-              Say Hello to <span className="title-anything">ra'edat</span>
-            </h1>
+      {/* Intro Section */}
+      <div className="about-intro-section">
+        <div className="about-intro-content">
+          <h1 className="about-main-title">
+            Say Hello to <span className="about-brand-highlight">ra'edat</span>
+          </h1>
+          <p className="about-description">
+            ra'edat is a pioneering platform dedicated to unleashing the
+            transformative potential of Arab women within the orange economy.
+            Located in the Kingdom of Bahrain, we serve as a vibrant digital
+            ecosystem where women engage in creative industries, gain essential
+            skills, and connect with a community passionate about artistic and
+            cultural entrepreneurship.
+          </p>
+        </div>
+        <div className="about-intro-image-box">
+          <img src="/assets/hello1.jpg" alt="Welcome to Ra'edat" />
+        </div>
+      </div>
+
+      {/* Vision & Mission Section */}
+      <div className="about-purpose-container">
+        <h1 className="about-section-heading">Vision & Mission</h1>
+
+        <div className="about-purpose-grid">
+          <div className="about-purpose-card">
+            <h2 className="about-sub-heading">Vision</h2>
             <p>
-              ra'edat is a pioneering platform dedicated to unleashing the
-              transformative potential of Arab women within the orange economy.
-              Located in the Kingdom of Bahrain, we serve as a vibrant digital
-              ecosystem where women engage in creative industries, gain
-              essential skills, and connect with a community passionate about
-              artistic and cultural entrepreneurship.
+              To ignite the creative potential of Arab women in the orange
+              economy, fostering a vibrant community of innovative thinkers and
+              changemakers who inspire social progress and economic development.
             </p>
+            <img
+              src="/assets/vision1.png"
+              alt="Our Vision"
+              className="about-purpose-icon"
+            />
           </div>
-          <div className="photo-for-hello">
-            <img src="../../public/assets/hello1.jpg" alt="hello-photo" />
+
+          <div className="about-purpose-card">
+            <h2 className="about-sub-heading">Mission</h2>
+            <p>
+              To empower Arab women by providing tools, mentorship, and
+              opportunities to thrive in the orange economy.
+            </p>
+            <img
+              src="/assets/mission1.png"
+              alt="Our Mission"
+              className="about-purpose-icon"
+            />
           </div>
         </div>
+      </div>
 
-        {/* Vision & Mission */}
-        <div>
-          <h1>Vision & Mission</h1>
+      {/* Economy Section */}
+      <div className="about-economy-section">
+        <div className="about-economy-image">
+          <img src="/assets/orange1.jpg" alt="Orange Economy" />
         </div>
-
-        <div>
-          <h2>Vision</h2>
-          <p>
-            To ignite the creative potential of Arab women in the orange
-            economy, fostering a vibrant community of innovative thinkers and
-            changemakers who inspire social progress and economic development.
-          </p>
-          <img src="../../public/assets/vision1.png" alt="vision-photo" />
-        </div>
-
-        <div>
-          <h2>Mission</h2>
-          <p>
-            To empower Arab women by providing tools, mentorship, and
-            opportunities to thrive in the orange economy.
-          </p>
-          <img src="../../public/assets/mission1.png" alt="mission-photo" />
-        </div>
-
-        {/* Economy */}
-        <div>
-          <img src="../../public/assets/orange1.jpg" alt="orange-photo" />
-          <h2>
+        <div className="about-economy-text">
+          <h2 className="about-economy-title">
             The Orange Economy:
             <br />
-            <span className="orange-name">A Creative Revolution</span>
+            <span className="about-orange-accent">A Creative Revolution</span>
           </h2>
           <p>
             The Orange Economy encompasses creative industries that blend
             culture, knowledge, and innovation to drive economic growth. This
             vibrant sector includes art, music, design, fashion, film,
-            literature, technology, and digital media. It transforms creativity
-            into economic value, enhancing cultural identity. For example, local
-            artists can turn their artwork into merchandise or musicians can
-            share their music worldwide through streaming platforms, connecting
-            diverse cultures.
+            literature, technology, and digital media.
           </p>
-
-          <p>
-            This dynamic economy fosters collaboration among entrepreneurs,
-            artists, and innovators, paving the way for new business models and
-            sustainable development. For instance, a fashion designer may
-            partner with artisans to create eco-friendly clothing that preserves
-            traditional crafts. By investing in the Orange Economy, we not only
-            elevate our brand but also contribute to a rich tapestry of global
-            culture and creativity.
-          </p>
-
-          <p>
-            <span>
-              "ra'edat is not just a tool; it's a catalyst for change.
-            </span>
+          <p className="about-quote">
+            "ra'edat is not just a tool; it's a catalyst for change."
           </p>
         </div>
+      </div>
 
-        {/* Our Uniqueness */}
-        <div>
-          <h1>Our Uniqueness</h1>
-          <p>
-            ra'edat stands out by creating an inclusive platform specifically
-            designed for Arab women. Our commitment to nurturing their talents
-            within the orange economy empowers them to overcome barriers and
-            maximize their creative potential. With pioneering features like
-            AI-powered matchmaking and a dedicated marketplace, ra'edat
-            transforms not just individual lives but entire communities.
-          </p>
+      {/* Uniqueness Section */}
+      <div className="about-uniqueness-section">
+        <h1 className="about-section-heading">Our Uniqueness</h1>
+        <p className="about-uniqueness-intro">
+          ra'edat stands out by creating an inclusive platform specifically
+          designed for Arab women.
+        </p>
 
-          <div className="photos-8">
-            <div>
-              <img src="../../public/assets/Uniqueness1.svg" alt="1" />
-              <p>Create posts, articles, polls, events, and courses.</p>
+        <div className="about-uniqueness-grid">
+          {[
+            {
+              img: "Uniqueness1.svg",
+              text: "Create posts, articles, polls, events, and courses.",
+            },
+            {
+              img: "Uniqueness2.svg",
+              text: "Build community groups and sub-groups for organisations.",
+            },
+            {
+              img: "Uniqueness3.svg",
+              text: "Support for creating a branded e-marketplace.",
+            },
+            {
+              img: "Uniqueness4.svg",
+              text: "Native app available for Android and IOS devices.",
+            },
+            {
+              img: "Uniqueness5.svg",
+              text: "Customisable experiences for community members.",
+            },
+            {
+              img: "Uniqueness6.svg",
+              text: "Enjoyable and straightforward technological.",
+            },
+            { img: "Uniqueness7.svg", text: "Numerus options to choose from." },
+            {
+              img: "Uniqueness8.svg",
+              text: "Enhance gamification features to boost engagement.",
+            },
+          ].map((item, index) => (
+            <div key={index} className="about-feature-card">
+              <img src={`/assets/${item.img}`} alt={`Feature ${index + 1}`} />
+              <p>{item.text}</p>
             </div>
+          ))}
+        </div>
+      </div>
 
-            <div>
-              <img src="../../public/assets/Uniqueness2.svg" alt="2" />
-              <p>Build community groups and sub-groups for organisations.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness3.svg" alt="3" />
-              <p>Support for creating a branded e-marketplace.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness4.svg" alt="4" />
-              <p>Native app available for Android and IOS devices.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness5.svg" alt="5" />
-              <p>Customisable experiences for community members.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness6.svg" alt="6" />
-              <p>Enjoyable and straightforward technological.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness7.svg" alt="7" />
-              <p>Numerus options to choose from.</p>
-            </div>
-
-            <div>
-              <img src="../../public/assets/Uniqueness8.svg" alt="8" />
-              <p>
-                Enhance gamification features to boost engagement and
-                motivation.
-              </p>
+      {/* Team Section */}
+      <div className="about-team-section">
+        <h1 className="about-section-heading">The Team</h1>
+        <div className="about-team-grid">
+          <div className="about-member-card">
+            <img src="/assets/Maryam Buzaboon.png" alt="Maryam Buzaboon" />
+            <div className="about-member-info">
+              <h3>Maryam Buzaboon</h3>
+              <p className="about-role">Business Development Manager</p>
             </div>
           </div>
-
-          {/* Teams */}
-          <div className="all-team">
-            <div>
-              <h1>The Team</h1>
-              <br />
-              <div className="photo1">
-                <p>Maryam Buzaboon</p>
-                <p className="Team-MemeberN-Position">
-                  Business Development Manager
-                </p>
-                <img src="../../public/assets/Maryam Buzaboon.png" alt="" />
-              </div>
-              <div className="photo2">
-                <p>Oday Adel</p>
-                <p className="Team-MemeberN-Position">Marketing Executive</p>
-                <img
-                  src="../../public/assets/Oday Adel.png"
-                  alt="Oday Adel-phoho"
-                />
-              </div>
-              <div className="photo3">
-                <p>Fayeza Ahmed</p>
-                <p className="Team-MemeberN-Position">
-                  Graphic Designer / Content Creator
-                </p>
-                <img
-                  src="../../public/assets/Fayeza Ahmed .png"
-                  alt="Fayeza Ahmed-photo"
-                />
-              </div>
+          <div className="about-member-card">
+            <img src="/assets/Oday Adel.png" alt="Oday Adel" />
+            <div className="about-member-info">
+              <h3>Oday Adel</h3>
+              <p className="about-role">Marketing Executive</p>
+            </div>
+          </div>
+          <div className="about-member-card">
+            <img src="/assets/Fayeza Ahmed .png" alt="Fayeza Ahmed" />
+            <div className="about-member-info">
+              <h3>Fayeza Ahmed</h3>
+              <p className="about-role">Graphic Designer / Content Creator</p>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
