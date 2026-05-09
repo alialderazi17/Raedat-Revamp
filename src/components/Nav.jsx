@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
 import "../Style/Nav.css"
 const Nav = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Toggle at 50px of scrolling
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   return (
-    <nav>
+    <nav className={isScrolled ? "scrolled" : ""}>
       <div className="logo">
         <img src="./assets/logo.png" alt="" />
       </div>

@@ -3,34 +3,63 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* Increased to fit larger logo */
-  background-color: #4b2680; /* Brand Purple */
+  height: 100px;
+
+  /* Initial state: Transparent */
+  background-color: transparent;
+  background: linear-gradient(
+    to bottom,
+    rgba(75, 38, 128, 0.4) 60%,
+    rgba(75, 38, 128, 0) 100%
+  );
+  /* border-bottom: 4px solid transparent; */
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
   box-sizing: border-box;
-  border-bottom: 4px solid #f7941d; /* Brand Orange */
   z-index: 1000;
+  transition: all 0.4s ease; /* Smooth transition between states */
+}
+
+/* --- The Scrolled State --- */
+nav.scrolled {
+  background: rgba(75, 38, 128, 0.95);
+  border-bottom: 4px solid #f7941d;
+  backdrop-filter: blur(10px); /* Modern frosted glass effect */
+  height: 80px; /* Optional: Shrink height slightly when scrolling for a sleeker feel */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .logo img {
-  height: 75px; /* Larger logo */
+  height: 75px;
   width: auto;
+  transition: height 0.4s ease;
+}
+
+/* Optional: Shrink logo slightly on scroll */
+nav.scrolled .logo img {
+  height: 60px;
 }
 
 .navbar {
   display: flex;
   gap: 40px;
-  opacity: 100%;
 }
 
 .navbar a {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.4rem; /* Larger navigation text */
+  font-size: 1.4rem;
   transition: color 0.3s ease;
+  /* Add text-shadow to ensure visibility on transparent background at the top */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav.scrolled .navbar a {
+  text-shadow: none; /* Remove shadow once background is solid */
 }
 
 .navbar a:hover,
