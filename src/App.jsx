@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 import Newsletter from "./pages/Newsletter"
 import PartnersPage from "./pages/Partnerspage"
 import Home from "./pages/Home"
+import About from "./pages/About"
 import { Route, Routes } from "react-router-dom"
 const App = () => {
   return (

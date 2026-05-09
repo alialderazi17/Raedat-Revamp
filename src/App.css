@@ -1,7 +1,199 @@
+/* --- Global Variables --- */
+:root {
+  --purple: #7029c2;
+  --orange: #f58220;
+  --dark: #1a1a2e;
+  --text-gray: #555555;
+  --bg-soft: #fcfaff;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.05);
+  /* The signature "ra'edat" shapes */
+  --radius-left: 100px 0 100px 0;
+  --radius-right: 0 100px 0 100px;
+}
+
+/* --- Base Setup --- */
+* {
+  box-sizing: border-box;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark);
   margin: 0;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+/* --- Consistent Section Spacing --- */
+section,
+.about-hello-all,
+.all-team,
+.economy-section {
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- Shared Typography --- */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  max-width: 700px;
+}
+
+.title-anything,
+.orange-name {
+  color: var(--purple);
+}
+
+/* --- Consistent Image Shapes --- */
+/* Alternating sections use alternating curves */
+.photo-for-hello img,
+.vision-card img {
+  border-radius: var(--radius-left);
+  box-shadow: 20px 20px 0px rgba(112, 41, 194, 0.08);
+}
+
+.economy-section img,
+.mission-card img {
+  border-radius: var(--radius-right);
+  box-shadow: -20px 20px 0px rgba(245, 130, 32, 0.08);
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+img:hover {
+  transform: scale(1.02);
+}
+
+/* --- Consistent Card Styling (Vision, Mission, Team) --- */
+.info-card,
+.photo1,
+.photo2,
+.photo3 {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+}
+
+.info-card:hover,
+.photo1:hover,
+.photo2:hover,
+.photo3:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(112, 41, 194, 0.12);
+}
+
+/* --- Section Layouts --- */
+
+/* Side-by-side Sections */
+.about-hello-all,
+.economy-section {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.economy-section {
+  flex-direction: row-reverse; /* Flip layout for consistency */
+  background-color: var(--bg-soft);
+}
+
+/* Grid Sections (Uniqueness) */
+.photos-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 0 10% 80px 10%;
+}
+
+.photos-8 > div {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.photos-8 img {
+  width: 60px;
+  margin-bottom: 10px;
+  filter: none;
+}
+
+/* --- Team Section --- */
+.all-team {
+  background: white;
+  text-align: center;
+}
+
+.all-team > div:last-child {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.all-team img {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.Team-MemeberN-Position {
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* --- Mobile Consistency --- */
+@media (max-width: 900px) {
+  section,
+  .about-hello-all,
+  .economy-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  p {
+    margin: 0 auto;
+  }
+
+  .photos-8 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .photo-for-hello,
+  .economy-section {
+    justify-content: center;
+  }
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
   box-sizing: border-box;
