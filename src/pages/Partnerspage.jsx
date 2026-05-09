@@ -1,11 +1,11 @@
-import React from "react"
+import "../Style/PartnersPage.css"
 
 const Partnerspage = () => {
   return (
     <div className="partners-container">
       <div className="hero-section">
         <img
-          src="/public/assets/Media Partners/partnersImage.png"
+          src="/assets/Media Partners/partnersImage.png"
           alt="Partners Hero"
           className="hero-image"
         />
@@ -17,17 +17,14 @@ const Partnerspage = () => {
         <div className="partners-grid">
           <a href="https://360moms.net/ar" className="media-card">
             <div className="image-holder">
-              <img
-                src="../../public/assets/Media Partners/MOMS360.jpg"
-                alt="360moms"
-              />
+              <img src="../assets/Media Partners/MOMS360.jpg" alt="360moms" />
             </div>
           </a>
 
           <a href="https://www.albiladpress.com/" className="media-card">
             <div className="image-holder">
               <img
-                src="../../public/assets/Media Partners/AlBiladPress.jpg"
+                src="../assets/Media Partners/AlBiladPress.jpg"
                 alt="albiladpress"
               />
             </div>
@@ -36,7 +33,7 @@ const Partnerspage = () => {
           <a href="https://alroya.om/" className="media-card">
             <div className="image-holder">
               <img
-                src="/public/assets/Media Partners/AlRoyaNewspaper.jpg"
+                src="/assets/Media Partners/AlRoyaNewspaper.jpg"
                 alt="Alroya"
               />
             </div>
@@ -52,7 +49,7 @@ const Partnerspage = () => {
         >
           <div className="image-holder">
             <img
-              src="/public/assets/Strategic Partners/Alrawi Books.jpg"
+              src="/assets/Strategic Partners/Alrawi Books.jpg"
               alt="Alrawi"
             />
           </div>
@@ -60,7 +57,7 @@ const Partnerspage = () => {
         <a href="https://gtrust.org/" className="media-card">
           <div className="image-holder">
             <img
-              src="/public/assets/Strategic Partners/Golden Trust.jpg"
+              src="/assets/Strategic Partners/Golden Trust.jpg"
               alt="GoldenTrust"
             />
           </div>
@@ -68,7 +65,7 @@ const Partnerspage = () => {
         <a href="https://www.instagram.com/bahwu/?hl=ar" className="media-card">
           <div className="image-holder">
             <img
-              src="/public/assets/Strategic Partners/Bahrain Women Union.jpg"
+              src="/assets/Strategic Partners/Bahrain Women Union.jpg"
               alt="bahwu"
             />
           </div>
@@ -79,38 +76,32 @@ const Partnerspage = () => {
         >
           <div className="image-holder">
             <img
-              src="/public/assets/Strategic Partners/Kipina Kids.jpg"
+              src="/assets/Strategic Partners/Kipina Kids.jpg"
               alt="KIPINA"
             />
           </div>
         </a>
         <a href="https://www.fywedo.com/" className="media-card">
           <div className="image-holder">
-            <img
-              src="/public/assets/Strategic Partners/FYWEDO.jpg"
-              alt="FYWEDO"
-            />
+            <img src="/assets/Strategic Partners/FYWEDO.jpg" alt="FYWEDO" />
           </div>
         </a>
         <a href="https://www.kaaf.bh/ar" className="media-card">
           <div className="image-holder">
-            <img src="/public/assets/Strategic Partners/kaaf.png" alt="Kaaf" />
+            <img src="/assets/Strategic Partners/kaaf.png" alt="Kaaf" />
           </div>
         </a>
         <a href="https://thinksmartgulf.com/" className="media-card">
           <div className="image-holder">
             <img
-              src="/public/assets/Strategic Partners/Thinksmart.png"
+              src="/assets/Strategic Partners/Thinksmart.png"
               alt="Thinksmart"
             />
           </div>
         </a>
         <a href="https://www.unido.org/" className="media-card">
           <div className="image-holder">
-            <img
-              src="/public/assets/Strategic Partners/UNIDO.png"
-              alt="UNIDO"
-            />
+            <img src="/assets/Strategic Partners/UNIDO.png" alt="UNIDO" />
           </div>
         </a>
       </div>
@@ -119,16 +110,13 @@ const Partnerspage = () => {
         <h1 className="title">Sponsors</h1>
         <a href="https://gfh.com/" className="media-card">
           <div className="image-holder">
-            <img src="/public/assets/SponsorsImages/GFH.jpg" alt="GFH" />
+            <img src="/assets/SponsorsImages/GFH.jpg" alt="GFH" />
           </div>
         </a>
 
         <a href="https://benefit.bh/" className="media-card">
           <div className="image-holder">
-            <img
-              src="/public/assets/SponsorsImages/Benefit.jpg"
-              alt="Benefit"
-            />
+            <img src="/assets/SponsorsImages/Benefit.jpg" alt="Benefit" />
           </div>
         </a>
       </div>
