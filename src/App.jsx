@@ -1,15 +1,20 @@
-import './App.css'
-import Nav from './components/Nav'
-import Newsletter from './pages/Newsletter'
-import { Route, Routes } from 'react-router-dom'
+import "./App.css"
+
+import Nav from "./components/Nav"
+import Footer from "./components/Footer"
+import Newsletter from "./pages/Newsletter"
+import Home from "./pages/Home"
+import { Route, Routes } from "react-router-dom"
 const App = () => {
   return (
     <>
       <div>
         <Nav />
         <Routes>
-          <Route path='/newsletter' element={<Newsletter />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/newsletter" element={<Newsletter />} />
         </Routes>
+        <Footer />
       </div>
     </>
   )
