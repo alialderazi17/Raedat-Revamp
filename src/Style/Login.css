@@ -1,0 +1,99 @@
+/* Container for the whole page */
+.login-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Institutional Anchor Purple Background */
+  background: linear-gradient(135deg, #4b2680 0%, #351b5c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Large Background Title (Raedat) */
+.login-page .title {
+  color: rgba(255, 255, 255, 0.05); /* Subtle watermark effect */
+  font-size: 10rem;
+  position: absolute;
+  top: 5%;
+  font-weight: 900;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+/* The Login Card */
+.login-card {
+  background: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px; /* Consistent brand radius */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 2;
+}
+
+.login-card h1 {
+  color: #4b2680; /* Anchor Purple */
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* Form Styling */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input Fields */
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e1e1e1;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: #f7941d; /* Brand Orange Focus */
+}
+
+/* Login Button */
+.login-card button {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px; /* Rounded pill shape */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(247, 148, 29, 0.3);
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-card button:hover {
+  background-color: #e68512;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(247, 148, 29, 0.4);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .login-card {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .login-page .title {
+    font-size: 4rem;
+  }
+}

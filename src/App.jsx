@@ -8,6 +8,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Community from "./pages/Community"
 import AddPartner from "./components/AddPartner"
+import Login from "./pages/login"
 import { Route, Routes } from "react-router-dom"
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <div>
         <Nav />
         <Routes>
+          <Route path="/auth/login" element={<Login />}></Route>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/newsletter" element={<Newsletter />} />
