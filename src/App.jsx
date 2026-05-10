@@ -6,6 +6,8 @@ import Newsletter from "./pages/Newsletter"
 import PartnersPage from "./pages/Partnerspage"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Community from "./pages/Community"
+import AddPartner from "./components/AddPartner"
 import Login from "./pages/login"
 import { Route, Routes } from "react-router-dom"
 const App = () => {
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/addPartner" element={<AddPartner />} />
         </Routes>
         <Footer />
       </div>

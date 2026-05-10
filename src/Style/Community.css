@@ -1,0 +1,117 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.community-page {
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.hero-section {
+  width: 100%;
+  line-height: 0;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-subtitle {
+  color: #666;
+  padding: 20px 40px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 20px 40px;
+}
+
+.community-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 5px solid #f39c12;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.category-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #f39c12;
+  letter-spacing: 1px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: white;
+}
+
+.status-badge.private {
+  background-color: red;
+}
+
+.status-badge.public {
+  background-color: #27ae60;
+}
+
+.community-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.community-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.privacy-notice {
+  font-style: italic;
+  color: #95a5a6;
+}
+
+.member-count {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #34495e;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #4a3080;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-top: auto;
+  text-align: left;
+}

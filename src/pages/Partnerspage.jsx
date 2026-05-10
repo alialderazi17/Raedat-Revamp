@@ -1,6 +1,8 @@
 import "../Style/PartnersPage.css"
+import { useNavigate } from "react-router-dom"
 
 const Partnerspage = () => {
+  const navigate = useNavigate()
   return (
     <div className="partners-container">
       <div className="hero-section">
@@ -119,6 +121,14 @@ const Partnerspage = () => {
             <img src="/assets/SponsorsImages/Benefit.jpg" alt="Benefit" />
           </div>
         </a>
+      </div>
+      <div className="partner-button-container">
+        <button
+          className="join-partner-btn"
+          onClick={() => navigate("/addPartner")}
+        >
+          Join as a Partner
+        </button>
       </div>
     </div>
   )
