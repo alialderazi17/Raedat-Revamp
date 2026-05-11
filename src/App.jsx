@@ -9,6 +9,7 @@ import About from "./pages/About"
 import Community from "./pages/Community"
 import AddPartner from "./components/AddPartner"
 import Login from "./pages/login"
+import Event from "./pages/Event"
 import { Route, Routes } from "react-router-dom"
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/community" element={<Community />} />
           <Route path="/addPartner" element={<AddPartner />} />
+          <Route path="/event" element={<Event />} />
         </Routes>
         <Footer />
       </div>
