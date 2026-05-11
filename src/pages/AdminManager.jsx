@@ -7,39 +7,39 @@ const initialState = {
   fullName: "",
   email: "",
   password: "",
-  role: "partner",
+  role: "admin",
 }
 
-const PartnerManager = () => {
-  const [partners, setPartner] = useState([])
+const AdminManager = () => {
+  const [admins, setAdmin] = useState([])
   const [message, setMessage] = useState("")
 
   const [formData, setFormData] = useState(initialState)
   const [editingId, setEditingId] = useState(null)
 
-  const getPartner = async () => {
+  const getAdmin = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}auth/partner`)
-      setPartner(response.data)
+      const response = await axios.get(`${BASE_URL}auth/admin`)
+      setAdmin(response.data)
     } catch (error) {
-      console.error("error getting partners", error)
+      console.error("error getting admins", error)
     }
   }
 
   useEffect(() => {
-    getPartner()
+    getAdmin()
   }, [])
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
-  const handleEditInit = (partner) => {
-    setEditingId(partner._id)
+  const handleEditInit = (admin) => {
+    setEditingId(admin._id)
     setFormData({
-      fullName: partner.fullName,
-      email: partner.email,
-      password: partner.password,
-      role: partner.role,
+      fullName: admin.fullName,
+      email: admin.email,
+      password: admin.password,
+      role: admin.role,
     })
   }
 
@@ -53,21 +53,21 @@ const PartnerManager = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      setMessage("Partner created successfully!")
-      getPartner()
+      setMessage("Admin created successfully!")
+      getAdmin()
     } catch (error) {
       console.error(error)
-      setMessage("Failed to create partner.")
+      setMessage("Failed to create Admin.")
     }
   }
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${BASE_URL}auth/${id}`)
-      setMessage("partner deleted successfully")
-      getPartner()
+      setMessage("Admin deleted successfully")
+      getAdmin()
     } catch (error) {
-      setMessage("Error deleting partner")
+      setMessage("Error deleting Admin")
     }
   }
 
@@ -76,10 +76,10 @@ const PartnerManager = () => {
     try {
       await axios.put(`${BASE_URL}auth/${editingId}`, formData)
 
-      setMessage("Partner updated successfully!")
+      setMessage("Admin updated successfully!")
       setEditingId(null)
       setFormData(initialState)
-      getPartner()
+      getAdmin()
     } catch (error) {
       console.error(error)
       setMessage("Update failed. Check your permissions or fields.")
@@ -93,8 +93,8 @@ const PartnerManager = () => {
 
   return (
     <div className="partner-manager">
-      <h2>Partner Management</h2>
-      <h3>{editingId ? "Update partner Mode" : "Register New partner"}</h3>
+      <h2>Admin Management</h2>
+      <h3>{editingId ? "Update admin Mode" : "Register New admin"}</h3>
 
       {message && <p>{message}</p>}
 
@@ -121,16 +121,10 @@ const PartnerManager = () => {
           required
         />
 
-        <input
-          name="role"
-          placeholder="role"
-          disabled
-          value="Partner"
-          required
-        />
+        <input name="role" placeholder="role" disabled value="Admin" required />
 
         {!editingId ? (
-          <button type="submit">Create Partner</button>
+          <button type="submit">Create admin</button>
         ) : (
           <div>
             <button type="submit">Confirm Update</button>
@@ -143,27 +137,27 @@ const PartnerManager = () => {
 
       <hr />
 
-      <h3>Partner List</h3>
+      <h3>Admin List</h3>
       <div>
-        {partners.length > 0 ? (
-          partners.map((partner) => (
-            <div key={partner._id}>
-              <p>Name: {partner.fullName}</p>
-              <p>Email: {partner.email}</p>
-              <p>Role: {partner.role}</p>
+        {admins.length > 0 ? (
+          admins.map((admin) => (
+            <div key={admin._id}>
+              <p>Name: {admin.fullName}</p>
+              <p>Email: {admin.email}</p>
+              <p>Role: {admin.role}</p>
 
-              <button onClick={() => handleEditInit(partner)}>Edit</button>
-              <button onClick={() => handleDelete(partner._id)}>Delete</button>
+              <button onClick={() => handleEditInit(admin)}>Edit</button>
+              <button onClick={() => handleDelete(admin._id)}>Delete</button>
 
               <hr />
             </div>
           ))
         ) : (
-          <p>No partner members found.</p>
+          <p>No admin members found.</p>
         )}
       </div>
     </div>
   )
 }
 
-export default PartnerManager
+export default AdminManager

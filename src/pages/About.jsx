@@ -7,7 +7,7 @@ const About = () => {
       {/* Hero / Nav Section */}
       <div className="about-hero-wrapper">
         <img
-          src="/assets/nav1.jpg"
+          src="/assets/AboutPage/nav1.jpg"
           alt="About Header"
           className="about-nav-image"
         />
@@ -29,7 +29,7 @@ const About = () => {
           </p>
         </div>
         <div className="about-intro-image-box">
-          <img src="/assets/hello1.jpg" alt="Welcome to Ra'edat" />
+          <img src="/assets/AboutPage/hello1.jpg" alt="Welcome to Ra'edat" />
         </div>
       </div>
 
@@ -46,7 +46,7 @@ const About = () => {
               changemakers who inspire social progress and economic development.
             </p>
             <img
-              src="/assets/vision1.png"
+              src="/assets/AboutPage/vision1.png"
               alt="Our Vision"
               className="about-purpose-icon"
             />
@@ -59,7 +59,7 @@ const About = () => {
               opportunities to thrive in the orange economy.
             </p>
             <img
-              src="/assets/mission1.png"
+              src="/assets/AboutPage/mission1.png"
               alt="Our Mission"
               className="about-purpose-icon"
             />
@@ -70,7 +70,7 @@ const About = () => {
       {/* Economy Section */}
       <div className="about-economy-section">
         <div className="about-economy-image">
-          <img src="/assets/orange1.jpg" alt="Orange Economy" />
+          <img src="/assets/AboutPage/orange1.jpg" alt="Orange Economy" />
         </div>
         <div className="about-economy-text">
           <h2 className="about-economy-title">
@@ -124,14 +124,20 @@ const About = () => {
               img: "Uniqueness6.svg",
               text: "Enjoyable and straightforward technological.",
             },
-            { img: "Uniqueness7.svg", text: "Numerus options to choose from." },
+            {
+              img: "Uniqueness7.svg",
+              text: "Numerus options to choose from.",
+            },
             {
               img: "Uniqueness8.svg",
               text: "Enhance gamification features to boost engagement.",
             },
           ].map((item, index) => (
             <div key={index} className="about-feature-card">
-              <img src={`/assets/${item.img}`} alt={`Feature ${index + 1}`} />
+              <img
+                src={`assets/AboutPage/${item.img}`}
+                alt={`Feature ${index + 1}`}
+              />
               <p>{item.text}</p>
             </div>
           ))}
@@ -143,21 +149,24 @@ const About = () => {
         <h1 className="about-section-heading">The Team</h1>
         <div className="about-team-grid">
           <div className="about-member-card">
-            <img src="/assets/Maryam Buzaboon.png" alt="Maryam Buzaboon" />
+            <img
+              src="/assets/AboutPage/Maryam Buzaboon.png"
+              alt="Maryam Buzaboon"
+            />
             <div className="about-member-info">
               <h3>Maryam Buzaboon</h3>
               <p className="about-role">Business Development Manager</p>
             </div>
           </div>
           <div className="about-member-card">
-            <img src="/assets/Oday Adel.png" alt="Oday Adel" />
+            <img src="/assets/AboutPage/Oday Adel.png" alt="Oday Adel" />
             <div className="about-member-info">
               <h3>Oday Adel</h3>
               <p className="about-role">Marketing Executive</p>
             </div>
           </div>
           <div className="about-member-card">
-            <img src="/assets/Fayeza Ahmed .png" alt="Fayeza Ahmed" />
+            <img src="/assets/AboutPage/Fayeza Ahmed .png" alt="Fayeza Ahmed" />
             <div className="about-member-info">
               <h3>Fayeza Ahmed</h3>
               <p className="about-role">Graphic Designer / Content Creator</p>

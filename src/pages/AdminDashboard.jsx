@@ -5,8 +5,9 @@ import { useNavigate, Link } from "react-router-dom"
 import "../Style/Admindash.css"
 
 const AdminDashboard = () => {
-  const [partnerCount, setStaffCount] = useState(0)
+  const [partnerCount, setPartnerCount] = useState(0)
   // const [newsletterCount, setNewletterCount] = useState(0)
+  const [adminCount, setAdminCount] = useState(0)
 
   const navigate = useNavigate()
 
@@ -23,8 +24,10 @@ const AdminDashboard = () => {
     try {
       const partner = await axios.get(`${BASE_URL}auth/partner`)
       // const newsletter = await axios.get(`${BASE_URL}newsletter`)
+      const admin = await axios.get(`${BASE_URL}auth/admin`)
 
-      setStaffCount(partner.data.length)
+      setPartnerCount(partner.data.length)
+      setAdminCount(admin.data.length)
     } catch (error) {
       console.error(error)
     }
@@ -47,6 +50,12 @@ const AdminDashboard = () => {
             <button className="btn">Manage newsletter</button>
           </Link>
         </div> */}
+        <div className="card">
+          <h3>Total Admin: {adminCount}</h3>
+          <Link to="/admin/admin">
+            <button className="btn">Manage Admin</button>
+          </Link>
+        </div>
       </div>
     </div>
   )
