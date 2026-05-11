@@ -1,0 +1,73 @@
+/* Container for the whole list */
+.partner-dash {
+  max-width: 900px;
+  margin: 100px auto; /* Lowered to clear the header */
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Ensures everything starts from the left */
+}
+
+/* Institutional Header with Orange Accent Bar */
+.partner-dash h3 {
+  color: #4b2680; /* Anchor Purple */
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+  border-left: 6px solid #f7941d; /* Brand Orange accent */
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+/* Partner Item Wrapper */
+.partner-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+/* Push text and badges to the left */
+.partner-item p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  justify-content: flex-start; /* Forces alignment to the left */
+}
+
+/* Label Styling (Name:, Email:) */
+.partner-item p strong {
+  color: #4b2680;
+  font-weight: 700;
+  width: 80px; /* Consistent spacing for labels */
+}
+
+/* Role Badge - Small and Left-Aligned */
+.role-badge {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+  padding: 4px 15px;
+  border-radius: 5px; /* Institutional square-round look */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content; /* Only as wide as the text */
+  margin-top: 10px;
+}
+
+/* Horizontal Line (HR) styling */
+.partner-dash hr {
+  border: 0;
+  height: 1px;
+  background: #eee; /* Subtle grey line */
+  margin: 0;
+}
+
+/* Hover Effect for the Row */
+.partner-item:hover {
+  background-color: #fcfaff; /* Very subtle purple tint */
+  padding-left: 10px; /* Small slide effect */
+}
