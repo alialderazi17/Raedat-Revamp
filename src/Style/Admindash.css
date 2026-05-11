@@ -1,0 +1,97 @@
+/* Container Layout */
+.dashboard-container {
+  min-height: 100vh;
+  padding: 120px 5% 40px; /* Top padding to clear the fixed Nav */
+  background-color: #f4f7f6; /* Light grey for a clean "Software" feel */
+  box-sizing: border-box;
+}
+
+.dashboard-title {
+  color: #4b2680; /* Anchor Purple */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  border-left: 8px solid #f7941d; /* Brand Orange accent */
+  padding-left: 20px;
+  font-weight: 800;
+}
+
+/* Stats Grid - Forces cards into the same line */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+/* Individual Card Styling */
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px; /* Consistent brand radius */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-top: 4px solid #4b2680; /* Purple top border */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(75, 38, 128, 0.15);
+}
+
+.card h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Button Styling */
+.btn {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background-color: #4b2680; /* Flips to Purple on hover */
+  box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
+}
+
+/* Link Reset */
+.card a {
+  text-decoration: none;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .dashboard-title {
+    font-size: 1.8rem;
+    border-left: none;
+    border-bottom: 4px solid #f7941d;
+    padding-left: 0;
+    padding-bottom: 10px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stacks cards on mobile */
+  }
+}

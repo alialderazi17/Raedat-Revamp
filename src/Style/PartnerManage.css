@@ -1,0 +1,142 @@
+.partner-manager {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 15px; /* Consistent brand radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Titles */
+.partner-manager h2 {
+  color: #4b2680; /* Anchor Purple */
+  font-size: 2rem;
+  border-bottom: 3px solid #f7941d; /* Brand Orange underline */
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.partner-manager h3 {
+  color: #555;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Message Alerts */
+.partner-manager p {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f0fdf4;
+  color: #166534;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form Layout */
+.partner-manager form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two column input layout */
+  gap: 15px;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.partner-manager input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.partner-manager input:focus {
+  outline: none;
+  border-color: #4b2680;
+  box-shadow: 0 0 5px rgba(75, 38, 128, 0.2);
+}
+
+/* Buttons */
+.partner-manager button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px; /* Pill shape for buttons */
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Primary Action: Create/Update */
+.partner-manager button[type="submit"] {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+  grid-column: span 2; /* Spans full width on form */
+}
+
+.partner-manager button[type="submit"]:hover {
+  background-color: #4b2680; /* Purple on hover */
+  transform: translateY(-2px);
+}
+
+/* Secondary Action: Cancel */
+.partner-manager button[type="button"] {
+  background-color: #e5e7eb;
+  color: #374151;
+  margin-left: 10px;
+}
+
+/* Partner List Area */
+.partner-manager .partner-list {
+  margin-top: 30px;
+}
+
+.partner-manager div[key] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.partner-manager div[key]:last-child {
+  border-bottom: none;
+}
+
+.partner-manager div[key] p {
+  background: none;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* Edit/Delete Small Buttons */
+.partner-manager div[key] button {
+  padding: 8px 15px;
+  font-size: 0.75rem;
+  margin-left: 10px;
+}
+
+.partner-manager div[key] button:nth-of-type(1) {
+  background-color: #4b2680;
+  color: white;
+}
+
+.partner-manager div[key] button:nth-of-type(2) {
+  background-color: #ef4444; /* Red for delete */
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .partner-manager form {
+    grid-template-columns: 1fr;
+  }
+  .partner-manager button[type="submit"] {
+    grid-column: span 1;
+  }
+}

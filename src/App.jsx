@@ -11,6 +11,10 @@ import AddPartner from "./components/AddPartner"
 import Login from "./pages/login"
 import Event from "./pages/Event"
 import { Route, Routes } from "react-router-dom"
+import AdminDashboard from "./pages/AdminDashboard"
+import PartnerManager from "./pages/PartnerManager"
+import AdminManager from "./pages/AdminManager"
+import PartnerDashboard from "./pages/PartnerDashboard"
 const App = () => {
   return (
     <>
@@ -18,8 +22,14 @@ const App = () => {
         <Nav />
         <Routes>
           <Route path="/auth/login" element={<Login />}></Route>
+          <Route path="/AdminDashboard" element={<AdminDashboard />} />
+          <Route path="/PartnerDashboard" element={<PartnerDashboard />} />
+
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/admin/partner" element={<PartnerManager />} />
+          <Route path="/admin/admin" element={<AdminManager />} />
+
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/community" element={<Community />} />
