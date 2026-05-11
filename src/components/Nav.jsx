@@ -25,10 +25,11 @@ const Nav = () => {
       </label>
       <div className="navbar">
         <NavLink to="/">Home</NavLink>
-        <NavLink to="about">About</NavLink>
+        <NavLink to="/about">About</NavLink>
         <NavLink to="/partners">Partners</NavLink>
         <NavLink to="/newsletter">Newsletters</NavLink>
         <NavLink to="/community">Community</NavLink>
+        <NavLink to="/event">Events</NavLink>
       </div>
     </nav>
   )
