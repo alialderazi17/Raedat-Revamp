@@ -38,7 +38,7 @@ const AdminManager = () => {
     setFormData({
       fullName: admin.fullName,
       email: admin.email,
-      password: admin.password,
+      password: "",
       role: admin.role,
     })
   }
@@ -102,7 +102,7 @@ const AdminManager = () => {
         <input
           name="fullName"
           placeholder="fullName"
-          value={formData.name}
+          value={formData.fullName}
           onChange={handleChange}
           required
         />

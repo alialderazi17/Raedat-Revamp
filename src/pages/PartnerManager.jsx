@@ -38,7 +38,7 @@ const PartnerManager = () => {
     setFormData({
       fullName: partner.fullName,
       email: partner.email,
-      password: partner.password,
+      password: "",
       role: partner.role,
     })
   }
@@ -102,7 +102,7 @@ const PartnerManager = () => {
         <input
           name="fullName"
           placeholder="fullName"
-          value={formData.name}
+          value={formData.fullName}
           onChange={handleChange}
           required
         />
