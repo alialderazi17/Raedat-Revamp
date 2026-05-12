@@ -2,6 +2,8 @@ import { Link, NavLink } from 'react-router-dom'
 import '../Style/Home.css'
 import '../Style/Newsletter.css'
 const Home = () => {
+  const userRole = localStorage.getItem('userRole')
+
   const highlights = [
     {
       id: 1,
@@ -66,10 +68,10 @@ const Home = () => {
       <div>
         <div className='news-content-wrapper'>
           <section className='highlights-intro'>
-            <h2>Inside this Issue</h2>
-            <p>
+            <h2>
               Stay connected with Ra'edat news and Baraha community updates.
-            </p>
+            </h2>
+            <p></p>
           </section>
 
           <div className='news-highlights-grid'>
@@ -97,7 +99,9 @@ const Home = () => {
               <NavLink to='https://apps.apple.com/us/app/raedat/id6742032306'>
                 <button className='cta-orange'>Download Now</button>
               </NavLink>
-              <button className='cta-outline'>Partner Portal</button>{' '}
+              {userRole === 'partner' && (
+                <button className='cta-outline'>Partner Portal</button>
+              )}
               {/* this should have conditional rendering if the user is a partner, let's leave it for now */}
             </div>
           </div>

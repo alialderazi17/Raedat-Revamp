@@ -151,6 +151,9 @@ nav.scrolled .navbar a {
     padding: 120px 40px;
     transition: 0.4s ease-in-out;
     border-right: 4px solid #f7941d;
+    z-index: 999; /* Just below the menu button */
+    /* Add this to prevent content from causing horizontal scroll */
+    overflow-x: hidden;
   }
 
   .navbar a {
@@ -164,14 +167,16 @@ nav.scrolled .navbar a {
   }
 
   /* Turn '---' into 'X' when open */
-  #menu-toggle:checked ~ .menu-button span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+  #menu-toggle:checked ~ .menu-button span {
+    background-color: #f7941d; /* Keep it orange or change to white if needed */
   }
-  #menu-toggle:checked ~ .menu-button span:nth-child(2) {
-    opacity: 0;
+
+  #menu-toggle:checked ~ .navbar {
+    left: 0;
   }
-  #menu-toggle:checked ~ .menu-button span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+  body {
+    overflow-x: hidden;
+    position: relative;
   }
 }
 

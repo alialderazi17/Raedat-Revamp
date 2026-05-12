@@ -2,7 +2,7 @@
   background-color: #4b2680;
   color: white;
   padding: 25px 8%;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .footer-content {
@@ -87,4 +87,41 @@
   font-size: 0.8rem;
   margin: 0;
   opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack the brand side and action side */
+    gap: 30px;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  .footer-brand-side {
+    flex-direction: column; /* Stack logo and tagline */
+    gap: 10px;
+  }
+
+  .footer-divider {
+    display: none; /* Remove the vertical line on mobile */
+  }
+
+  .footer-action-side {
+    flex-direction: column; /* Stack app info and login link */
+    gap: 15px;
+    width: 100%;
+  }
+
+  .admin-link-tiny {
+    border-left: none; /* Remove the side border */
+    padding-left: 0;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add a top divider instead */
+    padding-top: 15px;
+    width: 100%;
+  }
+
+  .footer-container {
+    padding: 30px 20px; /* Reduce side padding for mobile */
+  }
 }
