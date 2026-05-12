@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { NavLink, Link } from "react-router-dom"
 import axios from "axios"
+import { BASE_URL } from "../global.js"
 import "../Style/Newsletter.css"
 
 const Newsletter = () => {
@@ -8,13 +9,12 @@ const Newsletter = () => {
   const [selectedMonth, setSelectedMonth] = useState("All")
   const [selectedYear, setSelectedYear] = useState("All")
 
-  // Mock user - Replace this with your actual Auth/User Context
   const userRole = localStorage.getItem("userRole")
 
   useEffect(() => {
     const getNewsletters = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/newsletter")
+        const response = await axios.get(`${BASE_URL}newsletter`)
         setNewsletters(response.data)
       } catch (error) {
         console.error("Error getting newsletters:", error.message)
@@ -106,22 +106,36 @@ const Newsletter = () => {
         <div className="newsletter-container">
           <div className="newsletter-grid">
             {filteredNewsletters.length > 0 ? (
-              filteredNewsletters.map((newsletter) => (
-                <Link
-                  to={`${newsletter.letterLink}`}
-                  key={newsletter._id}
-                  className="newsletter-card"
-                >
-                  <img src={newsletter.coverImage} alt={newsletter.month} />
-                  <div className="newsletter-card-content">
-                    <h3>
-                      {newsletter.month} {newsletter.year} | Volume{" "}
-                      {newsletter.volume} Issue {newsletter.issue}
-                    </h3>
-                    <p>{newsletter.description}</p>
-                  </div>
-                </Link>
-              ))
+              filteredNewsletters.map((newsletter) => {
+                // Determine if coverImage is a link or a local file
+                const isExternal = newsletter.coverImage?.startsWith("http")
+                const imageSrc = isExternal
+                  ? newsletter.coverImage
+                  : `${BASE_URL}uploads/${newsletter.coverImage}`
+
+                return (
+                  <Link
+                    to={`${newsletter.letterLink}`}
+                    key={newsletter._id}
+                    className="newsletter-card"
+                  >
+                    <img
+                      src={imageSrc}
+                      alt={newsletter.month}
+                      onError={(e) => {
+                        e.target.src = "/assets/placeholder.png"
+                      }}
+                    />
+                    <div className="newsletter-card-content">
+                      <h3>
+                        {newsletter.month} {newsletter.year} | Volume{" "}
+                        {newsletter.volume} Issue {newsletter.issue}
+                      </h3>
+                      <p>{newsletter.description}</p>
+                    </div>
+                  </Link>
+                )
+              })
             ) : (
               <p className="no-results">
                 No newsletters found for the selected criteria.

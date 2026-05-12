@@ -67,3 +67,63 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+/* --- Mobile Styling for Partner Registration --- */
+@media (max-width: 768px) {
+  .partner-container {
+    padding: 15px; /* Less outer padding to save space */
+    min-height: auto;
+    padding-top: 100px; /* Space for fixed header */
+  }
+
+  .experience-card {
+    padding: 40px 20px; /* Reduced internal padding from 60px/40px */
+    border-radius: 15px;
+  }
+
+  .experience-card h2 {
+    font-size: 1.8rem; /* Scale down the title */
+    margin-bottom: 25px;
+  }
+
+  .partner-form {
+    gap: 12px;
+  }
+
+  /* 1. Stack Input Groups (First Name / Last Name) */
+  .input-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .partner-form input {
+    width: 100%; /* Ensure inputs take full width */
+    font-size: 16px; /* Prevents iPhone from auto-zooming on focus */
+    padding: 14px; /* Slightly larger for easier tapping */
+  }
+
+  /* 2. Stack Buttons */
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%; /* Full-width buttons for mobile ergonomics */
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .btn-outline {
+    order: 2; /* Optional: ensures 'Cancel' or 'Clear' stays below the main action */
+  }
+}
+
+/* Specific fix for height issues on small screens */
+@media (max-height: 700px) {
+  .partner-container {
+    align-items: flex-start; /* Prevents the card from being cut off at the top */
+  }
+}

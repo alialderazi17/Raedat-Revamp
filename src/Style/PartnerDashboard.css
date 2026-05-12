@@ -71,3 +71,57 @@
   background-color: #fcfaff; /* Very subtle purple tint */
   padding-left: 10px; /* Small slide effect */
 }
+
+/* --- Mobile Responsiveness for Partner Dashboard --- */
+@media (max-width: 768px) {
+  .partner-dash {
+    margin: 80px 15px; /* Less top margin, small side gap for phones */
+    padding: 25px 20px; /* Reduced internal padding */
+    border-radius: 10px; /* Slightly tighter corners for mobile */
+  }
+
+  .partner-dash h3 {
+    font-size: 1.5rem; /* Shrunk from 2rem to prevent wrapping */
+    margin-bottom: 25px;
+    border-left-width: 4px; /* Slightly thinner accent bar */
+  }
+
+  .partner-item {
+    padding: 15px 0;
+    gap: 10px; /* Slightly more gap between lines for readability */
+  }
+
+  .partner-item p {
+    flex-direction: column; /* Stack "Name:" above the actual name on very small screens */
+    align-items: flex-start;
+    font-size: 1rem;
+    gap: 2px;
+  }
+
+  .partner-item p strong {
+    width: auto; /* Remove the fixed 80px width to allow full-width text */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    opacity: 0.8; /* Subtle look for labels */
+  }
+
+  /* Role Badge - Make it easier to tap if it becomes a link later */
+  .role-badge {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    margin-top: 5px;
+  }
+
+  /* Disable the slide effect on hover for touch screens */
+  .partner-item:hover {
+    padding-left: 0;
+    background-color: transparent;
+  }
+}
+
+/* Specific fix for very small devices (iPhone SE / foldables) */
+@media (max-width: 380px) {
+  .partner-dash h3 {
+    font-size: 1.2rem;
+  }
+}
