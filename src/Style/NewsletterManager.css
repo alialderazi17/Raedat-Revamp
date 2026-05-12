@@ -1,0 +1,112 @@
+/* Container Spacing */
+.newsletter-manager {
+  max-width: 1000px;
+  margin: 100px auto; /* Moves list down to avoid header overlap */
+  padding: 40px;
+  font-family: sans-serif;
+  text-align: left; /* Institutional left-alignment */
+}
+
+/* Institutional Headings */
+.newsletter-manager h2,
+.newsletter-manager h3 {
+  color: #4b2680; /* Anchor Purple */
+  text-transform: uppercase;
+  border-left: 6px solid #f7941d; /* Brand Orange accent */
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+/* Form Layout - Two Columns */
+.newsletter-manager form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.newsletter-manager label {
+  grid-column: span 2;
+  font-weight: bold;
+  color: #4b2680;
+}
+
+.newsletter-manager input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Institutional Image Styling */
+.newsletter-manager img {
+  width: 900px; /* Consistent thumbnail size */
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #f7941d; /* Brand Orange border */
+  margin: 15px 0;
+  display: block;
+}
+
+/* List Item Formatting */
+.newsletter-manager div > div[key] {
+  padding: 20px 0;
+  display: block;
+}
+
+/* Text & Labels */
+.newsletter-manager p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Highlighted labels within the existing <p> tags */
+.newsletter-manager p strong {
+  color: #4b2680;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+/* Button Styling */
+.newsletter-manager button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Primary "Create" Button */
+.newsletter-manager button[type="submit"] {
+  grid-column: span 2;
+  background-color: #4b2680;
+  color: white;
+}
+
+/* Edit Button */
+.newsletter-manager button:nth-of-type(1):not([type="submit"]) {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+}
+
+/* Delete Button */
+.newsletter-manager button:nth-of-type(2) {
+  background-color: #fff;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+}
+
+/* Horizontal Line Separator */
+.newsletter-manager hr {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}
