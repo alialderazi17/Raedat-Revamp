@@ -41,7 +41,7 @@ const Community = () => {
         </div>
         <div className="image-container">
           <img
-            src="../../public/assets/CommunityPage/communityContentPage.png"
+            src="/assets/CommunityPage/communityContentPage.png"
             alt="Creative Woman"
             className="styled-hero-img"
           />

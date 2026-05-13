@@ -1,5 +1,5 @@
 /* Container Spacing */
-.partner-manager {
+.event-manager {
   max-width: 1000px;
   margin: 100px auto; /* Moves list down to avoid header overlap */
   padding: 40px;
@@ -8,8 +8,8 @@
 }
 
 /* Institutional Headings */
-.partner-manager h2,
-.partner-manager h3 {
+.event-manager h2,
+.event-manager h3 {
   color: #4b2680; /* Anchor Purple */
   text-transform: uppercase;
   border-left: 6px solid #f7941d; /* Brand Orange accent */
@@ -18,7 +18,7 @@
 }
 
 /* Form Layout - Two Columns */
-.partner-manager form {
+.event-manager form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -28,14 +28,14 @@
   margin-bottom: 50px;
 }
 
-.partner-manager label {
+.event-manager label {
   grid-column: span 2;
   font-weight: bold;
   color: #4b2680;
 }
 
-.partner-manager input,
-.partner-manager textarea {
+.event-manager input,
+.event-manager textarea {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -43,14 +43,14 @@
 }
 
 /* Description spans both columns */
-.partner-manager textarea {
+.event-manager textarea {
   grid-column: span 2;
   height: 100px;
   resize: vertical;
 }
 
 /* Institutional Image Styling */
-.partner-manager img {
+.event-manager img {
   width: 900px; /* Consistent thumbnail size */
   height: auto;
   border-radius: 8px;
@@ -60,13 +60,13 @@
 }
 
 /* List Item Formatting */
-.partner-manager .item-card {
+.event-manager .item-card {
   padding: 20px 0;
   display: block;
 }
 
 /* Text & Labels */
-.partner-manager p {
+.event-manager p {
   margin: 5px 0;
   color: #333;
   font-size: 1.1rem;

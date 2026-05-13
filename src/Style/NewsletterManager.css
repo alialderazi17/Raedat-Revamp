@@ -1,5 +1,5 @@
 /* Container Spacing */
-.partner-manager {
+.newsletter-manager {
   max-width: 1000px;
   margin: 100px auto; /* Moves list down to avoid header overlap */
   padding: 40px;
@@ -8,8 +8,8 @@
 }
 
 /* Institutional Headings */
-.partner-manager h2,
-.partner-manager h3 {
+.newsletter-manager h2,
+.newsletter-manager h3 {
   color: #4b2680; /* Anchor Purple */
   text-transform: uppercase;
   border-left: 6px solid #f7941d; /* Brand Orange accent */
@@ -18,7 +18,7 @@
 }
 
 /* Form Layout - Two Columns */
-.partner-manager form {
+.newsletter-manager form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
@@ -28,29 +28,20 @@
   margin-bottom: 50px;
 }
 
-.partner-manager label {
+.newsletter-manager label {
   grid-column: span 2;
   font-weight: bold;
   color: #4b2680;
 }
 
-.partner-manager input,
-.partner-manager textarea {
+.newsletter-manager input {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-family: sans-serif;
-}
-
-/* Description spans both columns */
-.partner-manager textarea {
-  grid-column: span 2;
-  height: 100px;
-  resize: vertical;
 }
 
 /* Institutional Image Styling */
-.partner-manager img {
+.newsletter-manager img {
   width: 900px; /* Consistent thumbnail size */
   height: auto;
   border-radius: 8px;
@@ -60,20 +51,20 @@
 }
 
 /* List Item Formatting */
-.partner-manager .item-card {
+.newsletter-manager div > div[key] {
   padding: 20px 0;
   display: block;
 }
 
 /* Text & Labels */
-.partner-manager p {
+.newsletter-manager p {
   margin: 5px 0;
   color: #333;
   font-size: 1.1rem;
 }
 
 /* Highlighted labels within the existing <p> tags */
-.event-manager p strong {
+.newsletter-manager p strong {
   color: #4b2680;
   text-transform: uppercase;
   font-size: 0.9rem;
@@ -81,7 +72,7 @@
 }
 
 /* Button Styling */
-.event-manager button {
+.newsletter-manager button {
   padding: 10px 20px;
   margin-right: 10px;
   margin-top: 10px;
@@ -92,36 +83,28 @@
   text-transform: uppercase;
 }
 
-/* Container for update/cancel buttons */
-.event-manager .btn-container {
-  grid-column: span 2;
-  display: flex;
-  gap: 10px;
-}
-
-/* Primary "Create" & "Confirm" Button */
-.event-manager button[type="submit"] {
+/* Primary "Create" Button */
+.newsletter-manager button[type="submit"] {
   grid-column: span 2;
   background-color: #4b2680;
   color: white;
-  flex: 1;
 }
 
-/* Edit Button in List */
-.event-manager .item-btns button:nth-of-type(1) {
+/* Edit Button */
+.newsletter-manager button:nth-of-type(1):not([type="submit"]) {
   background-color: #f7941d; /* Brand Orange */
   color: white;
 }
 
-/* Delete Button in List */
-.event-manager .item-btns button:nth-of-type(2) {
+/* Delete Button */
+.newsletter-manager button:nth-of-type(2) {
   background-color: #fff;
   color: #d9534f;
   border: 1px solid #d9534f;
 }
 
 /* Horizontal Line Separator */
-.event-manager hr {
+.newsletter-manager hr {
   border: 0;
   height: 1px;
   background: #eee;
