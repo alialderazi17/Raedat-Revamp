@@ -43,13 +43,6 @@ const Event = () => {
               <div className="event-card" key={event._id}>
                 {/* Header Section: Ra'edat Purple Identity */}
                 <div className="event-header">
-                  <div className="event-image-container">
-                    <img
-                      className="event-image"
-                      src="/assets/EventImg/Woman.jpg"
-                      alt={event.title}
-                    />
-                  </div>
                   <h1 className="event-main-title">{event.title}</h1>
                 </div>
 
