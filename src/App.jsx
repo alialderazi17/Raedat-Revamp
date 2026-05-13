@@ -17,8 +17,10 @@ import AdminDashboard from './pages/AdminDashboard'
 import PartnerManager from './pages/PartnerManager'
 import AdminManager from './pages/AdminManager'
 import PartnerDashboard from './pages/PartnerDashboard'
+import ContactPage from "./pages/ContactPage"
 import ConfirmDelete from './components/ConfirmDelete'
-
+import NewsletterManager from "./pages/NewsletterManger"
+import EventManager from "./pages/EventManger"
 import NewsletterManager from './pages/NewsletterManger'
 const App = () => {
   const navigate = useNavigate()
@@ -65,18 +67,22 @@ const App = () => {
             path='/PartnerDashboard'
             element={<PartnerDashboard setUser={setUser} />}
           />
-          <Route path='/admin/newsletter' element={<NewsletterManager />} />
+          
 
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/admin/partner' element={<PartnerManager />} />
           <Route path='/admin/admin' element={<AdminManager />} />
-
+          <Route path='/admin/newsletter' element={<NewsletterManager />} />
+          <Route path="/admin/request" element={<PartnerRequests />} />
+          <Route path="/admin/event" element={<EventManager />} />
+          
           <Route path='/newsletter' element={<Newsletter />} />
           <Route path='/partners' element={<PartnersPage />} />
           <Route path='/community' element={<Community />} />
           <Route path='/addPartner' element={<AddPartner />} />
           <Route path='/event' element={<Event />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path='/confirm-delete' element={<ConfirmDelete />} />
         </Routes>
         <Footer />

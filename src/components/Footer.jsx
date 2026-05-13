@@ -6,7 +6,7 @@ const Footer = () => {
       <div className='footer-content'>
         <div className='footer-brand-side'>
           <img
-            src='./assets/logo.png'
+            src="/assets/logo.png"
             alt="Ra'edat"
             className='footer-mini-logo'
           />
@@ -19,15 +19,21 @@ const Footer = () => {
         <div className='footer-action-side'>
           <span className='get-app-text'>Get the App</span>
           <img
-            src='/assets/appstore.png'
-            alt='App Store'
-            className='mini-badge'
+            src="/assets/appstore.png"
+            alt="App Store"
+            className="mini-badge"
           />
-          <div className='mini-qr-box'>
-            <img src='./assets/readatqr.png' alt='QR' />
+          <div className="mini-qr-box">
+            <img src="/assets/readatqr.png" alt="QR" />
           </div>
-          <a href='#' className='admin-link-tiny'>
+          <a href="/contact" className="admin-link-tiny">
+            Contact us
+          </a>
+          <a href="/auth/login" className="admin-link-tiny">
             Partner Login
+          </a>
+          <a href="/auth/login" className="admin-link-tiny">
+            Admin Login
           </a>
         </div>
       </div>

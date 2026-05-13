@@ -25,7 +25,6 @@ const Community = () => {
           alt="Community Hero"
           className="hero-image"
         />
-        <br />
       </div>
       <div className="hero-content-wrapper">
         <div className="text-content">
@@ -42,7 +41,7 @@ const Community = () => {
         </div>
         <div className="image-container">
           <img
-            src="../../public/assets/CommunityPage/communityContentPage.png"
+            src="/assets/CommunityPage/communityContentPage.png"
             alt="Creative Woman"
             className="styled-hero-img"
           />

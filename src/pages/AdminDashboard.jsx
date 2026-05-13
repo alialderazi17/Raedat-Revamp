@@ -8,6 +8,8 @@ const AdminDashboard = ({ setUser }) => {
   const [partnerCount, setPartnerCount] = useState(0)
   const [newsletterCount, setNewletterCount] = useState(0)
   const [adminCount, setAdminCount] = useState(0)
+  const [eventCount, setEventCount] = useState(0)
+  const [requests, setRequest] = useState([])
 
   const navigate = useNavigate()
 
@@ -19,16 +21,29 @@ const AdminDashboard = ({ setUser }) => {
 
     fetchData()
   }, [])
+  const getRequest = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}request/`)
+      setRequest(response.data)
+    } catch (error) {
+      console.error("error getting requests", error)
+    }
+  }
+  useEffect(() => {
+    getRequest()
+  }, [])
 
   const fetchData = async () => {
     try {
       const partner = await axios.get(`${BASE_URL}auth/partner`)
       const newsletter = await axios.get(`${BASE_URL}newsletter/`)
       const admin = await axios.get(`${BASE_URL}auth/admin`)
+      const event = await axios.get(`${BASE_URL}event/`)
 
       setPartnerCount(partner.data.length)
       setAdminCount(admin.data.length)
       setNewletterCount(newsletter.data.length)
+      setEventCount(event.data.length)
     } catch (error) {
       console.error(error)
     }
@@ -64,10 +79,24 @@ const AdminDashboard = ({ setUser }) => {
             <button className='btn'>Manage newsletter</button>
           </Link>
         </div>
-        <div className='card'>
+
+        <div className="card">
+          <h3>Total event: {eventCount}</h3>
+          <Link to="/admin/event">
+            <button className="btn">Manage events</button>
+          </Link>
+        </div>
+
+        <div className="card">
           <h3>Total Admin: {adminCount}</h3>
           <Link to='/admin/admin'>
             <button className='btn'>Manage Admin</button>
+          </Link>
+        </div>
+        <div className="card">
+          <h3>Partner Requsts</h3>
+          <Link to="/admin/request">
+            <button className="btn">See Requests</button>
           </Link>
         </div>
       </div>

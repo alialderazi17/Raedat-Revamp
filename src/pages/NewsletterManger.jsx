@@ -43,7 +43,16 @@ const NewsletterManager = () => {
 
   const handleEditInit = (newsletter) => {
     setEditingId(newsletter._id)
-    setFormData({ ...newsletter }) // Spreading existing data into form
+    setFormData({
+      coverImage: newsletter.coverImage,
+      month: newsletter.month,
+      year: newsletter.year,
+      volume: newsletter.volume,
+      issue: newsletter.issue,
+      description: newsletter.description,
+      letterLink: newsletter.letterLink,
+    })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   const handleCreate = async (e) => {
@@ -66,6 +75,7 @@ const NewsletterManager = () => {
       setMessage("Newsletter created successfully!")
       setFormData(initialState) // Reset form
       getNewsletters()
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Failed to create newsletter.")
@@ -177,7 +187,6 @@ const NewsletterManager = () => {
       <div className="newsletter-list">
         {newsletters.length > 0 ? (
           newsletters.map((newsletter) => {
-            // MOVED LOGIC INSIDE MAP: Check if image is a link or a file
             const isExternal = newsletter.coverImage?.startsWith("http")
             const imageSrc = isExternal
               ? newsletter.coverImage
