@@ -15,6 +15,7 @@ import AdminDashboard from "./pages/AdminDashboard"
 import PartnerManager from "./pages/PartnerManager"
 import AdminManager from "./pages/AdminManager"
 import PartnerDashboard from "./pages/PartnerDashboard"
+import ContactPage from "./pages/ContactPage"
 import ConfirmDelete from "./components/ConfirmDelete"
 import { useState } from "react"
 import NewsletterManager from "./pages/NewsletterManger"
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/addPartner" element={<AddPartner />} />
           <Route path="/event" element={<Event />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/confirm-delete" element={<ConfirmDelete />} />
         </Routes>
         <Footer />
