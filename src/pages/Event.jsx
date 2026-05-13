@@ -2,12 +2,10 @@ import "../Style/Event.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
+import { NavLink } from "react-router-dom"
 
 const Event = () => {
   const [events, setEvents] = useState([])
-
-  // Set a default capacity since it's not in the schema yet
-  // Once you add 'capacity' to your MongoDB schema, change this to event.capacity
 
   useEffect(() => {
     const getEvents = async () => {
@@ -23,7 +21,6 @@ const Event = () => {
 
   return (
     <div className="event-page-container">
-      {/* Top Banner Image */}
       <img
         className="event-banner"
         src="/assets/EventImg/event head.jpg"
@@ -33,8 +30,6 @@ const Event = () => {
       <div className="event-list-wrapper">
         {events.length > 0 ? (
           events.map((event) => {
-            // Calculate remaining spots
-
             const spotsRemaining = event.capacity - event.RSVP
             const isLowAvailability = spotsRemaining > 0 && spotsRemaining < 20
             const isSoldOut = spotsRemaining <= 0
@@ -48,7 +43,6 @@ const Event = () => {
 
                 <hr className="divider" />
 
-                {/* Details Section */}
                 <div className="event-details">
                   <div className="detail-row">
                     <span className="detail-label">Date:</span>
@@ -70,7 +64,7 @@ const Event = () => {
                   </div>
                   <div className="detail-row">
                     <span className="detail-label">Availability:</span>
-                    {/* RED if less than 20 remaining, ORANGE if 20+ remaining */}
+
                     <span
                       className={`detail-value ${isLowAvailability ? "status-critical" : "orange-text"}`}
                     >
@@ -85,14 +79,15 @@ const Event = () => {
 
                 <hr className="divider" />
 
-                {/* Footer Section with Action Button */}
                 <div className="event-footer">
-                  <button
-                    className={`rsvp-button ${isSoldOut ? "disabled-btn" : ""}`}
-                    disabled={isSoldOut}
-                  >
-                    {isSoldOut ? "Sold Out" : "Book Your Spot"}
-                  </button>
+                  <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
+                    <button
+                      className={`rsvp-button ${isSoldOut ? "disabled-btn" : ""}`}
+                      disabled={isSoldOut}
+                    >
+                      {isSoldOut ? "Sold Out" : "Book Your Spot"}
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             )

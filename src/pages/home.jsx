@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 import "../Style/Home.css"
 import "../Style/Newsletter.css"
 const Home = () => {
-  const userRole = localStorage.getItem('userRole')
+  const userRole = localStorage.getItem("userRole")
 
   const highlights = [
     {
@@ -66,8 +66,8 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className='news-content-wrapper'>
-          <section className='highlights-intro'>
+        <div className="news-content-wrapper">
+          <section className="highlights-intro">
             <h2>
               Stay connected with Ra'edat news and Baraha community updates.
             </h2>
@@ -82,9 +82,11 @@ const Home = () => {
                   <span className="category-label">{item.category}</span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-                  <button className="learn-more-link">
-                    Read more in Baraha →
-                  </button>
+                  <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
+                    <button className="learn-more-link">
+                      Read more in Baraha →
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             ))}
@@ -99,10 +101,9 @@ const Home = () => {
               <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
                 <button className="cta-orange">Download Now</button>
               </NavLink>
-              {userRole === 'partner' && (
-                <button className='cta-outline'>Partner Portal</button>
+              {userRole === "partner" && (
+                <button className="cta-outline">Partner Portal</button>
               )}
-              {/* this should have conditional rendering if the user is a partner, let's leave it for now */}
             </div>
           </div>
         </div>

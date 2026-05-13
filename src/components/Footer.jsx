@@ -1,4 +1,5 @@
 import "../Style/Footer.css"
+import { NavLink } from "react-router-dom"
 
 const Footer = () => {
   return (
@@ -18,11 +19,13 @@ const Footer = () => {
 
         <div className="footer-action-side">
           <span className="get-app-text">Get the App</span>
-          <img
-            src="/assets/appstore.png"
-            alt="App Store"
-            className="mini-badge"
-          />
+          <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
+            <img
+              src="/assets/appstore.png"
+              alt="App Store"
+              className="mini-badge"
+            />
+          </NavLink>
           <div className="mini-qr-box">
             <img src="/assets/readatqr.png" alt="QR" />
           </div>

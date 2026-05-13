@@ -76,6 +76,28 @@
   text-decoration: none;
 }
 
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logout-btn-dash {
+  background-color: #ff4d4d; /* Reddish for logout */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.logout-btn-dash:hover {
+  background-color: #cc0000;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .dashboard-container {

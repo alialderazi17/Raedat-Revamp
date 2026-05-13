@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/PartnerManage.css"
-import { useNavigate } from "react-router-dom"
 
 const initialState = {
   fullName: "",
@@ -20,7 +19,6 @@ const AdminManager = () => {
 
   const [formData, setFormData] = useState(initialState)
   const [editingId, setEditingId] = useState(null)
-  const navigate = useNavigate()
 
   const getAdmin = async () => {
     try {
