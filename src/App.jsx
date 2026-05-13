@@ -15,6 +15,7 @@ import AdminDashboard from "./pages/AdminDashboard"
 import PartnerManager from "./pages/PartnerManager"
 import AdminManager from "./pages/AdminManager"
 import PartnerDashboard from "./pages/PartnerDashboard"
+import ContactPage from "./pages/ContactPage"
 const App = () => {
   return (
     <>
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/community" element={<Community />} />
           <Route path="/addPartner" element={<AddPartner />} />
           <Route path="/event" element={<Event />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </div>

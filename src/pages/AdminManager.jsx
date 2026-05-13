@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/PartnerManage.css"
+import { useNavigate  } from "react-router-dom"
 
 const initialState = {
   fullName: "",
@@ -11,6 +12,8 @@ const initialState = {
 }
 
 const AdminManager = () => {
+  const navigate = useNavigate()
+
   const [admins, setAdmin] = useState([])
   const [message, setMessage] = useState("")
 
@@ -80,6 +83,7 @@ const AdminManager = () => {
       setEditingId(null)
       setFormData(initialState)
       getAdmin()
+      
     } catch (error) {
       console.error(error)
       setMessage("Update failed. Check your permissions or fields.")

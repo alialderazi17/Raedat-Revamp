@@ -25,7 +25,6 @@ const Community = () => {
           alt="Community Hero"
           className="hero-image"
         />
-        <br />
       </div>
       <div className="hero-content-wrapper">
         <div className="text-content">
