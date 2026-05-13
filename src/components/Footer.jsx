@@ -26,7 +26,7 @@ const Footer = () => {
           <div className="mini-qr-box">
             <img src="/assets/readatqr.png" alt="QR" />
           </div>
-          <a href="#" className="admin-link-tiny">
+          <a href="/auth/login" className="admin-link-tiny">
             Partner Login
           </a>
           <a href="/auth/login" className="admin-link-tiny">
