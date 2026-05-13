@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/PartnerManage.css"
@@ -16,6 +17,7 @@ const AdminManager = () => {
 
   const [formData, setFormData] = useState(initialState)
   const [editingId, setEditingId] = useState(null)
+  const navigate = useNavigate()
 
   const getAdmin = async () => {
     try {
@@ -64,15 +66,26 @@ const AdminManager = () => {
     }
   }
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${BASE_URL}auth/${id}`)
-      setMessage("Admin deleted successfully")
-      getAdmin()
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } catch (error) {
-      setMessage("Error deleting Admin")
-    }
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await axios.delete(`${BASE_URL}auth/${id}`)
+  //     setMessage("Admin deleted successfully")
+  //     getAdmin()
+  //   } catch (error) {
+  //     setMessage("Error deleting Admin")
+  //   }
+  // }
+
+  const triggerDelete = (admin) => {
+    navigate("/confirm-delete", {
+      state: {
+        id: admin._id,
+        displayName: admin.fullName,
+        deleteUrl: `${BASE_URL}auth/${admin._id}`,
+        context: "Admin",
+        redirectUrl: "/admin/admin",
+      },
+    })
   }
 
   const handleUpdate = async (e) => {
@@ -152,7 +165,7 @@ const AdminManager = () => {
               <p>Role: {admin.role}</p>
 
               <button onClick={() => handleEditInit(admin)}>Edit</button>
-              <button onClick={() => handleDelete(admin._id)}>Delete</button>
+              <button onClick={() => triggerDelete(admin)}>Delete</button>
 
               <hr />
             </div>

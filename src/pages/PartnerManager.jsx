@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/PartnerManage.css"
@@ -11,6 +12,7 @@ const initialState = {
 }
 
 const PartnerManager = () => {
+  const navigate = useNavigate()
   const [partners, setPartner] = useState([])
   const [message, setMessage] = useState("")
 
@@ -64,15 +66,16 @@ const PartnerManager = () => {
     }
   }
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${BASE_URL}auth/${id}`)
-      setMessage("partner deleted successfully")
-      getPartner()
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } catch (error) {
-      setMessage("Error deleting partner")
-    }
+  const triggerDelete = (partner) => {
+    navigate("/confirm-delete", {
+      state: {
+        id: partner._id,
+        displayName: partner.fullName,
+        deleteUrl: `${BASE_URL}auth/${partner._id}`,
+        context: "Partner",
+        redirectUrl: "/admin/partner",
+      },
+    })
   }
 
   const handleUpdate = async (e) => {
@@ -158,7 +161,7 @@ const PartnerManager = () => {
               <p>Role: {partner.role}</p>
 
               <button onClick={() => handleEditInit(partner)}>Edit</button>
-              <button onClick={() => handleDelete(partner._id)}>Delete</button>
+              <button onClick={() => triggerDelete(partner)}>Delete</button>
 
               <hr />
             </div>

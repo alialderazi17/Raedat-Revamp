@@ -6,7 +6,7 @@ html {
 
 .community-page {
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
 }
 
@@ -22,10 +22,12 @@ html {
   display: block;
   object-fit: cover;
 }
+/* --- Global Fixes --- */
 .hero-content-container {
   text-align: left;
   padding: 60px 10%;
   background-color: #ffffff;
+  transition: padding 0.3s ease;
 }
 .hero-content-container > img {
   width: 400px;
@@ -34,7 +36,7 @@ html {
 }
 
 .main-title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 4rem;
   font-weight: 800;
   color: #0a1d37;
@@ -77,7 +79,7 @@ html {
 }
 
 .hero-description {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   color: #444444;
@@ -176,4 +178,78 @@ html {
   padding: 0;
   margin-top: auto;
   text-align: left;
+}
+
+/* --- Mobile Styling (Phone View) --- */
+@media (max-width: 768px) {
+  /* 1. Adjust the Hero Padding */
+  .hero-content-container {
+    padding: 40px 20px; /* Switch from 10% to 20px to save space */
+  }
+
+  /* 2. Stack the Text and Image */
+  .hero-content-wrapper {
+    flex-direction: column;
+    text-align: left; /* Keep left aligned to match brand style */
+    gap: 30px;
+  }
+
+  /* 3. Scale Down Typography */
+  .main-title {
+    font-size: 2.2rem; /* Shrunk from 4rem so it doesn't wrap awkwardly */
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* 4. Fix the Branding/Logos */
+  .hero-content-container > img {
+    width: 100%;
+    max-width: 250px; /* Prevents the logo/graphic from being massive */
+    margin: 10px 0 20px 0;
+  }
+
+  /* 5. Image Container Fixes */
+  .image-container {
+    justify-content: center; /* Center the styled image on mobile */
+    margin: 0;
+  }
+
+  .styled-hero-img {
+    max-width: 100%;
+    /* Maintain that unique curve but scale it down slightly */
+    border-radius: 60px 60px 15px 60px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  /* 6. Community Grid Fixes */
+  .community-grid {
+    grid-template-columns: 1fr; /* Single column for vertical scrolling */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .community-card {
+    padding: 20px;
+  }
+
+  .community-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* --- Tablet Adjustments --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-content-container {
+    padding: 40px 5%;
+  }
 }
