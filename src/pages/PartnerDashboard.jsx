@@ -1,39 +1,56 @@
-import { useState, useEffect } from "react"
-import axios from "axios"
-import { BASE_URL } from "../global.js"
-import "../Style/PartnerDashboard.css"
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL } from '../global.js'
+import '../Style/PartnerDashboard.css'
 
-const PartnerDashboard = () => {
+const PartnerDashboard = ({ setUser }) => {
+  const navigate = useNavigate()
   const [partners, setPartner] = useState([])
+
+  useEffect(() => {
+    const role = localStorage.getItem('userRole')
+
+    if (role !== 'partner' && role !== 'admin') {
+      navigate('/auth/login')
+    } else {
+      getPartner()
+    }
+  }, [])
 
   const getPartner = async () => {
     try {
       const response = await axios.get(`${BASE_URL}auth/partner`)
       setPartner(response.data)
     } catch (error) {
-      console.error("error getting partners", error)
+      console.error('error getting partners', error)
     }
   }
 
-  useEffect(() => {
-    getPartner()
-  }, [])
+  const handleLogout = () => {
+    localStorage.clear()
+    setUser(null)
+    navigate('/auth/login')
+  }
 
   return (
-    <div className="partner-dash">
+    <div className='partner-dash'>
       <h3>Partner List</h3>
+      <button onClick={handleLogout} className='logout-btn-dash'>
+        Sign Out
+      </button>
       <div>
         {partners.length > 0 ? (
           partners.map((partner) => (
             <div key={partner._id}>
-              <div className="partner-item">
+              <div className='partner-item'>
                 <p>
                   <strong>Name:</strong> {partner.fullName}
                 </p>
                 <p>
                   <strong>Email:</strong> {partner.email}
                 </p>
-                <div className="role-badge">Role: {partner.role}</div>
+                <div className='role-badge'>Role: {partner.role}</div>
               </div>
               <hr />
             </div>
