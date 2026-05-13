@@ -41,6 +41,7 @@ const PartnerManager = () => {
       password: "",
       role: partner.role,
     })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   const handleCreate = async (e) => {
@@ -55,6 +56,8 @@ const PartnerManager = () => {
       })
       setMessage("Partner created successfully!")
       getPartner()
+      setFormData(initialState)
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Failed to create partner.")
@@ -66,6 +69,7 @@ const PartnerManager = () => {
       await axios.delete(`${BASE_URL}auth/${id}`)
       setMessage("partner deleted successfully")
       getPartner()
+      window.scrollTo({ top: 0, behavior: "smooth" })
     } catch (error) {
       setMessage("Error deleting partner")
     }
@@ -80,6 +84,7 @@ const PartnerManager = () => {
       setEditingId(null)
       setFormData(initialState)
       getPartner()
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Update failed. Check your permissions or fields.")

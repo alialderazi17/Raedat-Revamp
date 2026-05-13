@@ -49,6 +49,7 @@ const NewsletterManager = () => {
       description: newsletter.description,
       letterLink: newsletter.letterLink,
     })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   const handleCreate = async (e) => {
@@ -66,6 +67,7 @@ const NewsletterManager = () => {
       })
       setMessage("newlstter created successfully!")
       getNewsletters()
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Failed to create newsletter.")
@@ -77,6 +79,7 @@ const NewsletterManager = () => {
       await axios.delete(`${BASE_URL}newsletter/${id}`)
       setMessage("newsletter deleted successfully")
       getNewsletters()
+      window.scrollTo({ top: 0, behavior: "smooth" })
     } catch (error) {
       setMessage("Error deleting newsletter")
     }

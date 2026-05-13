@@ -17,6 +17,7 @@ import AdminManager from "./pages/AdminManager"
 import PartnerDashboard from "./pages/PartnerDashboard"
 import { useState } from "react"
 import NewsletterManager from "./pages/NewsletterManger"
+import EventManager from "./pages/EventManger"
 const App = () => {
   return (
     <>
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/AdminDashboard" element={<AdminDashboard />} />
           <Route path="/PartnerDashboard" element={<PartnerDashboard />} />
           <Route path="/admin/newsletter" element={<NewsletterManager />} />
+          <Route path="/admin/event" element={<EventManager />} />
 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

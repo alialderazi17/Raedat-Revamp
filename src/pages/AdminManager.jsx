@@ -41,6 +41,7 @@ const AdminManager = () => {
       password: "",
       role: admin.role,
     })
+    window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   const handleCreate = async (e) => {
@@ -55,6 +56,8 @@ const AdminManager = () => {
       })
       setMessage("Admin created successfully!")
       getAdmin()
+      setFormData(initialState)
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Failed to create Admin.")
@@ -66,6 +69,7 @@ const AdminManager = () => {
       await axios.delete(`${BASE_URL}auth/${id}`)
       setMessage("Admin deleted successfully")
       getAdmin()
+      window.scrollTo({ top: 0, behavior: "smooth" })
     } catch (error) {
       setMessage("Error deleting Admin")
     }
@@ -80,6 +84,7 @@ const AdminManager = () => {
       setEditingId(null)
       setFormData(initialState)
       getAdmin()
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
       console.error(error)
       setMessage("Update failed. Check your permissions or fields.")
