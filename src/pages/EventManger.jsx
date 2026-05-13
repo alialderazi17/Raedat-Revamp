@@ -8,7 +8,7 @@ const initialState = {
   date: "",
   time: "",
   location: "",
-  RSVP: "",
+  capacity: "",
 }
 
 const EventManager = () => {
@@ -41,7 +41,7 @@ const EventManager = () => {
       date: event.date ? event.date.split("T")[0] : "",
       time: event.time,
       location: event.location,
-      RSVP: event.RSVP,
+      capacity: event.capacity,
     })
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -131,9 +131,9 @@ const EventManager = () => {
           required
         />
         <input
-          name="RSVP"
-          placeholder="RSVP Link or Email"
-          value={formData.RSVP}
+          name="capacity"
+          placeholder="capacity"
+          value={formData.capacity}
           onChange={handleChange}
         />
 
@@ -164,7 +164,7 @@ const EventManager = () => {
                 <strong>Location:</strong> {event.location}
               </p>
               <p>
-                <strong>RSVP:</strong> {event.RSVP}
+                <strong>capacity:</strong> {event.capacity}
               </p>
               <p>
                 <strong>Time:</strong> {event.time}
