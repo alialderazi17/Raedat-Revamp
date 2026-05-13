@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/EventManager.css"
@@ -12,6 +13,8 @@ const initialState = {
 }
 
 const EventManager = () => {
+  const navigate = useNavigate()
+
   const [events, setEvents] = useState([])
   const [message, setMessage] = useState("")
   const [formData, setFormData] = useState(initialState)
@@ -81,7 +84,7 @@ const EventManager = () => {
       state: {
         id: event._id,
         displayName: event.title,
-        deleteUrl: `${BASE_URL}auth/${event._id}`,
+        deleteUrl: `${BASE_URL}event/${event._id}`,
         context: "Event",
         redirectUrl: "/admin/event",
       },
@@ -172,7 +175,7 @@ const EventManager = () => {
             </div>
             <div className="item-btns">
               <button onClick={() => handleEditInit(event)}>Edit</button>
-              <button onClick={() => triggerDelete(event._id)}>Delete</button>
+              <button onClick={() => triggerDelete(event)}>Delete</button>
             </div>
             <hr />
           </div>

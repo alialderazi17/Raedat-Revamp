@@ -9,6 +9,7 @@ const AdminDashboard = () => {
   const [newsletterCount, setNewletterCount] = useState(0)
   const [adminCount, setAdminCount] = useState(0)
   const [eventCount, setEventCount] = useState(0)
+  const [requests, setRequest] = useState([])
 
   const navigate = useNavigate()
 
@@ -19,6 +20,17 @@ const AdminDashboard = () => {
     }
 
     fetchData()
+  }, [])
+  const getRequest = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}request/`)
+      setRequest(response.data)
+    } catch (error) {
+      console.error("error getting requests", error)
+    }
+  }
+  useEffect(() => {
+    getRequest()
   }, [])
 
   const fetchData = async () => {
@@ -66,6 +78,12 @@ const AdminDashboard = () => {
           <h3>Total Admin: {adminCount}</h3>
           <Link to="/admin/admin">
             <button className="btn">Manage Admin</button>
+          </Link>
+        </div>
+        <div className="card">
+          <h3>Partner Requsts</h3>
+          <Link to="/admin/request">
+            <button className="btn">See Requests</button>
           </Link>
         </div>
       </div>

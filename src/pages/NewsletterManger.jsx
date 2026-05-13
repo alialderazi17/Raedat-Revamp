@@ -187,7 +187,6 @@ const NewsletterManager = () => {
       <div className="newsletter-list">
         {newsletters.length > 0 ? (
           newsletters.map((newsletter) => {
-            // MOVED LOGIC INSIDE MAP: Check if image is a link or a file
             const isExternal = newsletter.coverImage?.startsWith("http")
             const imageSrc = isExternal
               ? newsletter.coverImage
