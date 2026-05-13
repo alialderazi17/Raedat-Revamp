@@ -1,0 +1,129 @@
+/* Container Spacing */
+.event-manager {
+  max-width: 1000px;
+  margin: 100px auto; /* Moves list down to avoid header overlap */
+  padding: 40px;
+  font-family: sans-serif;
+  text-align: left; /* Institutional left-alignment */
+}
+
+/* Institutional Headings */
+.event-manager h2,
+.event-manager h3 {
+  color: #4b2680; /* Anchor Purple */
+  text-transform: uppercase;
+  border-left: 6px solid #f7941d; /* Brand Orange accent */
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+/* Form Layout - Two Columns */
+.event-manager form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.event-manager label {
+  grid-column: span 2;
+  font-weight: bold;
+  color: #4b2680;
+}
+
+.event-manager input,
+.event-manager textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+/* Description spans both columns */
+.event-manager textarea {
+  grid-column: span 2;
+  height: 100px;
+  resize: vertical;
+}
+
+/* Institutional Image Styling */
+.event-manager img {
+  width: 900px; /* Consistent thumbnail size */
+  height: auto;
+  border-radius: 8px;
+  border: 3px solid #f7941d; /* Brand Orange border */
+  margin: 15px 0;
+  display: block;
+}
+
+/* List Item Formatting */
+.event-manager .item-card {
+  padding: 20px 0;
+  display: block;
+}
+
+/* Text & Labels */
+.event-manager p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+/* Highlighted labels within the existing <p> tags */
+.event-manager p strong {
+  color: #4b2680;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+/* Button Styling */
+.event-manager button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Container for update/cancel buttons */
+.event-manager .btn-container {
+  grid-column: span 2;
+  display: flex;
+  gap: 10px;
+}
+
+/* Primary "Create" & "Confirm" Button */
+.event-manager button[type="submit"] {
+  grid-column: span 2;
+  background-color: #4b2680;
+  color: white;
+  flex: 1;
+}
+
+/* Edit Button in List */
+.event-manager .item-btns button:nth-of-type(1) {
+  background-color: #f7941d; /* Brand Orange */
+  color: white;
+}
+
+/* Delete Button in List */
+.event-manager .item-btns button:nth-of-type(2) {
+  background-color: #fff;
+  color: #d9534f;
+  border: 1px solid #d9534f;
+}
+
+/* Horizontal Line Separator */
+.event-manager hr {
+  border: 0;
+  height: 1px;
+  background: #eee;
+  margin: 20px 0;
+}

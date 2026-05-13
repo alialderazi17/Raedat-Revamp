@@ -8,6 +8,7 @@ const AdminDashboard = () => {
   const [partnerCount, setPartnerCount] = useState(0)
   const [newsletterCount, setNewletterCount] = useState(0)
   const [adminCount, setAdminCount] = useState(0)
+  const [eventCount, setEventCount] = useState(0)
 
   const navigate = useNavigate()
 
@@ -25,10 +26,12 @@ const AdminDashboard = () => {
       const partner = await axios.get(`${BASE_URL}auth/partner`)
       const newsletter = await axios.get(`${BASE_URL}newsletter/`)
       const admin = await axios.get(`${BASE_URL}auth/admin`)
+      const event = await axios.get(`${BASE_URL}event/`)
 
       setPartnerCount(partner.data.length)
       setAdminCount(admin.data.length)
       setNewletterCount(newsletter.data.length)
+      setEventCount(event.data.length)
     } catch (error) {
       console.error(error)
     }
@@ -51,6 +54,14 @@ const AdminDashboard = () => {
             <button className="btn">Manage newsletter</button>
           </Link>
         </div>
+
+        <div className="card">
+          <h3>Total event: {eventCount}</h3>
+          <Link to="/admin/event">
+            <button className="btn">Manage events</button>
+          </Link>
+        </div>
+
         <div className="card">
           <h3>Total Admin: {adminCount}</h3>
           <Link to="/admin/admin">
