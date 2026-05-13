@@ -94,7 +94,7 @@ const AddPartner = () => {
                 className="btn-outline"
                 onClick={() => navigate(-1)}
               >
-                Partner Portal
+                Back to Partners
               </button>
             </div>
           </form>

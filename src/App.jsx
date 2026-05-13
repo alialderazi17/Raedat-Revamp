@@ -1,27 +1,27 @@
-import './App.css'
-import { checkSession } from './services/Auth'
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import Nav from './components/Nav'
-import Footer from './components/Footer'
-import Newsletter from './pages/Newsletter'
-import PartnersPage from './pages/Partnerspage'
-import Home from './pages/Home'
-import About from './pages/About'
-import Community from './pages/Community'
-import AddPartner from './components/AddPartner'
-import Login from './pages/login'
-import Event from './pages/Event'
-import { Route, Routes } from 'react-router-dom'
-import AdminDashboard from './pages/AdminDashboard'
-import PartnerManager from './pages/PartnerManager'
-import AdminManager from './pages/AdminManager'
-import PartnerDashboard from './pages/PartnerDashboard'
+import "./App.css"
+import { checkSession } from "./services/Auth"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import Nav from "./components/Nav"
+import Footer from "./components/Footer"
+import Newsletter from "./pages/Newsletter"
+import PartnersPage from "./pages/Partnerspage"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Community from "./pages/Community"
+import AddPartner from "./components/AddPartner"
+import Login from "./pages/login"
+import Event from "./pages/Event"
+import { Route, Routes } from "react-router-dom"
+import AdminDashboard from "./pages/AdminDashboard"
+import PartnerManager from "./pages/PartnerManager"
+import AdminManager from "./pages/AdminManager"
+import PartnerDashboard from "./pages/PartnerDashboard"
 import ContactPage from "./pages/ContactPage"
-import ConfirmDelete from './components/ConfirmDelete'
+import ConfirmDelete from "./components/ConfirmDelete"
 import NewsletterManager from "./pages/NewsletterManger"
 import EventManager from "./pages/EventManger"
-import NewsletterManager from './pages/NewsletterManger'
+import PartnerRequests from "./pages/PartnerRequests"
 const App = () => {
   const navigate = useNavigate()
   const [user, setUser] = useState(null)
@@ -29,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     const checkUser = async () => {
-      const token = localStorage.getItem('userToken')
+      const token = localStorage.getItem("userToken")
 
       if (!token) {
         setLoading(false)
@@ -44,7 +44,7 @@ const App = () => {
       } catch (error) {
         localStorage.clear()
         setUser(null)
-        navigate('/auth/login')
+        navigate("/auth/login")
       }
     }
     checkUser()
@@ -56,34 +56,33 @@ const App = () => {
         <Nav user={user} setUser={setUser} />
         <Routes>
           <Route
-            path='/auth/login'
+            path="/auth/login"
             element={<Login setUser={setUser} />}
           ></Route>
           <Route
-            path='/AdminDashboard'
+            path="/AdminDashboard"
             element={<AdminDashboard setUser={setUser} />}
           />
           <Route
-            path='/PartnerDashboard'
+            path="/PartnerDashboard"
             element={<PartnerDashboard setUser={setUser} />}
           />
-          
 
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/admin/partner' element={<PartnerManager />} />
-          <Route path='/admin/admin' element={<AdminManager />} />
-          <Route path='/admin/newsletter' element={<NewsletterManager />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/admin/partner" element={<PartnerManager />} />
+          <Route path="/admin/admin" element={<AdminManager />} />
+          <Route path="/admin/newsletter" element={<NewsletterManager />} />
           <Route path="/admin/request" element={<PartnerRequests />} />
           <Route path="/admin/event" element={<EventManager />} />
-          
-          <Route path='/newsletter' element={<Newsletter />} />
-          <Route path='/partners' element={<PartnersPage />} />
-          <Route path='/community' element={<Community />} />
-          <Route path='/addPartner' element={<AddPartner />} />
-          <Route path='/event' element={<Event />} />
+
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/addPartner" element={<AddPartner />} />
+          <Route path="/event" element={<Event />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path='/confirm-delete' element={<ConfirmDelete />} />
+          <Route path="/confirm-delete" element={<ConfirmDelete />} />
         </Routes>
         <Footer />
       </div>

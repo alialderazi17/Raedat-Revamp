@@ -1,28 +1,31 @@
-import '../Style/Footer.css'
+import "../Style/Footer.css"
+import { NavLink } from "react-router-dom"
 
 const Footer = () => {
   return (
-    <footer className='footer-container'>
-      <div className='footer-content'>
-        <div className='footer-brand-side'>
+    <footer className="footer-container">
+      <div className="footer-content">
+        <div className="footer-brand-side">
           <img
             src="/assets/logo.png"
             alt="Ra'edat"
-            className='footer-mini-logo'
+            className="footer-mini-logo"
           />
-          <span className='footer-divider'>|</span>
-          <p className='footer-tagline'>
+          <span className="footer-divider">|</span>
+          <p className="footer-tagline">
             Empowering the next generation of female leaders.
           </p>
         </div>
 
-        <div className='footer-action-side'>
-          <span className='get-app-text'>Get the App</span>
-          <img
-            src="/assets/appstore.png"
-            alt="App Store"
-            className="mini-badge"
-          />
+        <div className="footer-action-side">
+          <span className="get-app-text">Get the App</span>
+          <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
+            <img
+              src="/assets/appstore.png"
+              alt="App Store"
+              className="mini-badge"
+            />
+          </NavLink>
           <div className="mini-qr-box">
             <img src="/assets/readatqr.png" alt="QR" />
           </div>
@@ -38,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='footer-legal'>
+      <div className="footer-legal">
         <p>© 2026 Ra'edat. All rights reserved.</p>
       </div>
     </footer>

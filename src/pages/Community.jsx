@@ -1,6 +1,7 @@
 import "../Style/Community.css"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { NavLink } from "react-router-dom"
 
 const Community = () => {
   const [communities, setCommunities] = useState([])
@@ -84,11 +85,13 @@ const Community = () => {
             </div>
 
             <div className="card-footer">
-              <button className="read-more-btn">
-                {community.private
-                  ? "Request to Join"
-                  : "Read more in Baraha →"}
-              </button>
+              <NavLink to="https://apps.apple.com/us/app/raedat/id6742032306">
+                <button className="learn-more-link">
+                  {community.private
+                    ? "Request to Join"
+                    : "Read more in Baraha →"}
+                </button>
+              </NavLink>
             </div>
           </div>
         ))}
