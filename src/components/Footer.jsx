@@ -26,6 +26,9 @@ const Footer = () => {
           <div className="mini-qr-box">
             <img src="/assets/readatqr.png" alt="QR" />
           </div>
+          <a href="/contact" className="admin-link-tiny">
+            Contact us
+          </a>
           <a href="/auth/login" className="admin-link-tiny">
             Partner Login
           </a>
