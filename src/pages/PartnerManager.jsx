@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { BASE_URL } from "../global.js"
 import "../Style/EventManager.css"
+import emailjs from "@emailjs/browser"
 
 const initialState = {
   fullName: "",
@@ -51,18 +52,28 @@ const PartnerManager = () => {
     const token = localStorage.getItem("token")
 
     try {
+      // A. First, save to your database
       await axios.post(`${BASE_URL}auth/`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        headers: { Authorization: `Bearer ${token}` },
       })
-      setMessage("Partner created successfully!")
+
+      const serviceID = "service_xbjc57z"
+      const templateID = "template_3wv57bl"
+      const publicKey = "xf4OZQHmvt8M3ayNd"
+
+      const templateParams = {
+        to_name: formData.fullName,
+        to_email: formData.email,
+      }
+
+      await emailjs.send(serviceID, templateID, templateParams, publicKey)
+
+      setMessage("Partner created and email sent successfully!")
       getPartner()
       setFormData(initialState)
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })
     } catch (error) {
-      console.error(error)
-      setMessage("Failed to create partner.")
+      console.error("Process failed:", error)
+      setMessage("Failed to complete registration.")
     }
   }
 
