@@ -19,6 +19,7 @@ import ConfirmDelete from "./components/ConfirmDelete"
 import { useState } from "react"
 import NewsletterManager from "./pages/NewsletterManger"
 import EventManager from "./pages/EventManger"
+import PartnerRequests from "./pages/PartnerRequests"
 const App = () => {
   return (
     <>
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/admin/partner" element={<PartnerManager />} />
           <Route path="/admin/admin" element={<AdminManager />} />
+          <Route path="/admin/request" element={<PartnerRequests />} />
 
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/partners" element={<PartnersPage />} />

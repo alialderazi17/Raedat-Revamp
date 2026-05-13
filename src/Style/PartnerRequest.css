@@ -1,0 +1,150 @@
+/* Container and Title */
+.requests-dashboard {
+  padding: 40px 20px;
+  background-color: #f8f9fc;
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  color: #4a3080; /* Your brand purple */
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* Grid Layout */
+.requests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Request Card */
+.request-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+}
+
+.request-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(74, 48, 128, 0.12);
+}
+
+/* Card Header */
+.request-header {
+  padding: 20px;
+  background-color: #fcfaff;
+  border-bottom: 1px solid #f0edf5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request-header h3 {
+  margin: 0;
+  color: #4a3080;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  background-color: #e3fcef;
+  color: #00875a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Card Body */
+.request-body {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.request-body p {
+  margin: 8px 0;
+  color: #4a4a4a;
+  font-size: 0.95rem;
+}
+
+.request-body strong {
+  color: #2d2d2d;
+  width: 70px;
+  display: inline-block;
+}
+
+/* Message Section */
+.message-box {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #f39c12; /* Accent orange from your submit button */
+}
+
+.request-message {
+  margin-top: 5px !important;
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Footer and Action Button */
+.request-footer {
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-top: 1px solid #f0f0f0;
+}
+
+.btn-action {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a3080;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-action:hover {
+  background-color: #3b2566;
+}
+
+/* No Data State */
+.no-data {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 16px;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .requests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+}
