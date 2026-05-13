@@ -76,15 +76,16 @@ const EventManager = () => {
     }
   }
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${BASE_URL}event/${id}`)
-      setMessage("Event deleted.")
-      getEvents()
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    } catch (error) {
-      setMessage("Error deleting event")
-    }
+  const triggerDelete = (event) => {
+    navigate("/confirm-delete", {
+      state: {
+        id: event._id,
+        displayName: event.title,
+        deleteUrl: `${BASE_URL}auth/${event._id}`,
+        context: "Event",
+        redirectUrl: "/admin/event",
+      },
+    })
   }
 
   const cancelEdit = () => {
@@ -171,7 +172,7 @@ const EventManager = () => {
             </div>
             <div className="item-btns">
               <button onClick={() => handleEditInit(event)}>Edit</button>
-              <button onClick={() => handleDelete(event._id)}>Delete</button>
+              <button onClick={() => triggerDelete(event._id)}>Delete</button>
             </div>
             <hr />
           </div>
