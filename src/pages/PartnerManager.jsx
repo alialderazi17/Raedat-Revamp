@@ -64,6 +64,7 @@ const PartnerManager = () => {
       const templateParams = {
         to_name: formData.fullName,
         to_email: formData.email,
+        to_password: formData.password,
       }
 
       await emailjs.send(serviceID, templateID, templateParams, publicKey)
